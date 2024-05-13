@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\FrmAjouterPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmAjouterPersonnel.Designer.cs">
+      <DependentUpon>FrmAjouterPersonnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmGestionDuPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmGestionDuPersonnel.Designer.cs">
+      <DependentUpon>FrmGestionDuPersonnel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmAuthentification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -51,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\FrmAjouterPersonnel.resx">
+      <DependentUpon>FrmAjouterPersonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmGestionDuPersonnel.resx">
+      <DependentUpon>FrmGestionDuPersonnel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmAuthentification.resx">
       <DependentUpon>FrmAuthentification.cs</DependentUpon>
     </EmbeddedResource>
@@ -62,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -76,6 +98,30 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_mediatek.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_pen_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_trash_can.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Custom-Icon-Design-Mono-General-1-Delete.512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Oxygen-Icons.org-Oxygen-Actions-list-add-user.256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Custom-Icon-Design-Pretty-Office-7-Calendar.256.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
