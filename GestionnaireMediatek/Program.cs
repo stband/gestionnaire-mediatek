@@ -16,7 +16,7 @@ namespace GestionnaireMediatek
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAjouterPersonnel());
+            Application.Run(new FrmAjouterModifierPersonnel());
         }
     }
 }

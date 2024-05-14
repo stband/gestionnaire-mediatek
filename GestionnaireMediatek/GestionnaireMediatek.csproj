@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\FrmConfirmerSuppressionOuModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmConfirmerSuppressionOuModification.Designer.cs">
+      <DependentUpon>FrmConfirmerSuppressionOuModification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmAjouterPersonnel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\FrmConfirmerSuppressionOuModification.resx">
+      <DependentUpon>FrmConfirmerSuppressionOuModification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmAjouterPersonnel.resx">
       <DependentUpon>FrmAjouterPersonnel.cs</DependentUpon>
     </EmbeddedResource>
