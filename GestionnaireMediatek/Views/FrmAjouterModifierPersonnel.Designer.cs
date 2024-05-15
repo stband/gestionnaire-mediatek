@@ -1,6 +1,6 @@
 ﻿namespace GestionnaireMediatek.Views
 {
-    partial class FrmAjouterPersonnel
+    partial class FrmAjouterModifierPersonnel
     {
         /// <summary>
         /// Required designer variable.
@@ -37,8 +37,8 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.lblGestionErreur = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.panelCouleur = new System.Windows.Forms.Panel();
+            this.panelCouleur.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtInfo
@@ -57,7 +57,7 @@
             this.txtNom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNom.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtNom.Location = new System.Drawing.Point(21, 60);
-            this.txtNom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(4);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(335, 25);
             this.txtNom.TabIndex = 1;
@@ -68,7 +68,7 @@
             this.txtPrenom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrenom.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtPrenom.Location = new System.Drawing.Point(21, 93);
-            this.txtPrenom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrenom.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(335, 25);
             this.txtPrenom.TabIndex = 2;
@@ -79,7 +79,7 @@
             this.txtTel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTel.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtTel.Location = new System.Drawing.Point(21, 126);
-            this.txtTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTel.Margin = new System.Windows.Forms.Padding(4);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(335, 25);
             this.txtTel.TabIndex = 3;
@@ -90,7 +90,7 @@
             this.txtMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMail.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtMail.Location = new System.Drawing.Point(21, 159);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(4);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(335, 25);
             this.txtMail.TabIndex = 4;
@@ -107,7 +107,7 @@
             "autre",
             ""});
             this.cbxServiceAffectation.Location = new System.Drawing.Point(21, 192);
-            this.cbxServiceAffectation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxServiceAffectation.Margin = new System.Windows.Forms.Padding(4);
             this.cbxServiceAffectation.Name = "cbxServiceAffectation";
             this.cbxServiceAffectation.Size = new System.Drawing.Size(335, 25);
             this.cbxServiceAffectation.TabIndex = 5;
@@ -116,7 +116,7 @@
             // btnAjouter
             // 
             this.btnAjouter.Location = new System.Drawing.Point(21, 230);
-            this.btnAjouter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAjouter.Margin = new System.Windows.Forms.Padding(4);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(166, 27);
             this.btnAjouter.TabIndex = 6;
@@ -126,7 +126,7 @@
             // btnAnnuler
             // 
             this.btnAnnuler.Location = new System.Drawing.Point(190, 230);
-            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(166, 27);
             this.btnAnnuler.TabIndex = 7;
@@ -147,23 +147,23 @@
             this.lblGestionErreur.Text = "lbltext gestion des erreurs";
             this.lblGestionErreur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // panelCouleur
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightBlue;
-            this.panel1.Controls.Add(this.txtInfo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(376, 45);
-            this.panel1.TabIndex = 9;
+            this.panelCouleur.BackColor = System.Drawing.Color.Tan;
+            this.panelCouleur.Controls.Add(this.txtInfo);
+            this.panelCouleur.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCouleur.Location = new System.Drawing.Point(0, 0);
+            this.panelCouleur.Name = "panelCouleur";
+            this.panelCouleur.Size = new System.Drawing.Size(376, 45);
+            this.panelCouleur.TabIndex = 9;
             // 
-            // FrmAjouterPersonnel
+            // FrmAjouterModifierPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(376, 298);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelCouleur);
             this.Controls.Add(this.lblGestionErreur);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnAjouter);
@@ -174,10 +174,10 @@
             this.Controls.Add(this.txtNom);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "FrmAjouterPersonnel";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FrmAjouterModifierPersonnel";
             this.Text = "Ajouter un nouveau personnel";
-            this.panel1.ResumeLayout(false);
+            this.panelCouleur.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +194,6 @@
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Label lblGestionErreur;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelCouleur;
     }
 }

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace GestionnaireMediatek.Views
 {
-    public partial class FrmAjouterModifierPersonnel : Form
+    public partial class FrmConfirmerSuppressionOuModificationAbsence : Form
     {
-        public FrmAjouterModifierPersonnel()
+        public FrmConfirmerSuppressionOuModificationAbsence()
         {
             InitializeComponent();
         }

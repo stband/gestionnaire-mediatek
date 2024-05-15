@@ -46,17 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\FrmAjouterModifierAbsence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmAjouterModifierAbsence.Designer.cs">
+      <DependentUpon>FrmAjouterModifierAbsence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmConfirmerSuppressionOuModificationAbsence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmConfirmerSuppressionOuModificationAbsence.Designer.cs">
+      <DependentUpon>FrmConfirmerSuppressionOuModificationAbsence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmGestionDesAbsences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmGestionDesAbsences.Designer.cs">
+      <DependentUpon>FrmGestionDesAbsences.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmConfirmerSuppressionOuModification.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FrmConfirmerSuppressionOuModification.Designer.cs">
       <DependentUpon>FrmConfirmerSuppressionOuModification.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmAjouterPersonnel.cs">
+    <Compile Include="Views\FrmAjouterModifierPersonnel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmAjouterPersonnel.Designer.cs">
-      <DependentUpon>FrmAjouterPersonnel.cs</DependentUpon>
+    <Compile Include="Views\FrmAjouterModifierPersonnel.Designer.cs">
+      <DependentUpon>FrmAjouterModifierPersonnel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmGestionDuPersonnel.cs">
       <SubType>Form</SubType>
@@ -72,11 +90,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\FrmAjouterModifierAbsence.resx">
+      <DependentUpon>FrmAjouterModifierAbsence.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmConfirmerSuppressionOuModification.resx">
       <DependentUpon>FrmConfirmerSuppressionOuModification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmAjouterPersonnel.resx">
-      <DependentUpon>FrmAjouterPersonnel.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FrmAjouterModifierPersonnel.resx">
+      <DependentUpon>FrmAjouterModifierPersonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmConfirmerSuppressionOuModificationAbsence.resx">
+      <DependentUpon>FrmConfirmerSuppressionOuModificationAbsence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmGestionDesAbsences.resx">
+      <DependentUpon>FrmGestionDesAbsences.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmGestionDuPersonnel.resx">
       <DependentUpon>FrmGestionDuPersonnel.cs</DependentUpon>
