@@ -32,7 +32,7 @@
             this.txtMotDePasse = new System.Windows.Forms.TextBox();
             this.btnSeConnecter = new System.Windows.Forms.Button();
             this.pbxLogo = new System.Windows.Forms.PictureBox();
-            this.txtGestionErreur = new System.Windows.Forms.Label();
+            this.lblGestionErreur = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@
             this.txtIdentifiant.BackColor = System.Drawing.SystemColors.Window;
             this.txtIdentifiant.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtIdentifiant.Location = new System.Drawing.Point(93, 119);
-            this.txtIdentifiant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdentifiant.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdentifiant.Name = "txtIdentifiant";
             this.txtIdentifiant.Size = new System.Drawing.Size(209, 25);
             this.txtIdentifiant.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.txtMotDePasse.BackColor = System.Drawing.SystemColors.Window;
             this.txtMotDePasse.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtMotDePasse.Location = new System.Drawing.Point(93, 149);
-            this.txtMotDePasse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMotDePasse.Margin = new System.Windows.Forms.Padding(4);
             this.txtMotDePasse.Name = "txtMotDePasse";
             this.txtMotDePasse.Size = new System.Drawing.Size(209, 25);
             this.txtMotDePasse.TabIndex = 1;
@@ -61,7 +61,7 @@
             // btnSeConnecter
             // 
             this.btnSeConnecter.Location = new System.Drawing.Point(93, 179);
-            this.btnSeConnecter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSeConnecter.Margin = new System.Windows.Forms.Padding(4);
             this.btnSeConnecter.Name = "btnSeConnecter";
             this.btnSeConnecter.Size = new System.Drawing.Size(210, 30);
             this.btnSeConnecter.TabIndex = 2;
@@ -72,24 +72,24 @@
             // 
             this.pbxLogo.Image = global::GestionnaireMediatek.Properties.Resources.logo_mediatek;
             this.pbxLogo.Location = new System.Drawing.Point(41, -97);
-            this.pbxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pbxLogo.Name = "pbxLogo";
             this.pbxLogo.Size = new System.Drawing.Size(296, 285);
             this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxLogo.TabIndex = 3;
             this.pbxLogo.TabStop = false;
             // 
-            // txtGestionErreur
+            // lblGestionErreur
             // 
-            this.txtGestionErreur.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGestionErreur.ForeColor = System.Drawing.Color.Red;
-            this.txtGestionErreur.Location = new System.Drawing.Point(12, 219);
-            this.txtGestionErreur.Name = "txtGestionErreur";
-            this.txtGestionErreur.Size = new System.Drawing.Size(376, 13);
-            this.txtGestionErreur.TabIndex = 4;
-            this.txtGestionErreur.Text = "Identifiant ou mot de passe incorrect. Veuillez réessayer.";
-            this.txtGestionErreur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txtGestionErreur.Visible = false;
+            this.lblGestionErreur.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionErreur.ForeColor = System.Drawing.Color.Red;
+            this.lblGestionErreur.Location = new System.Drawing.Point(12, 219);
+            this.lblGestionErreur.Name = "lblGestionErreur";
+            this.lblGestionErreur.Size = new System.Drawing.Size(376, 13);
+            this.lblGestionErreur.TabIndex = 4;
+            this.lblGestionErreur.Text = "Identifiant ou mot de passe incorrect. Veuillez réessayer.";
+            this.lblGestionErreur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGestionErreur.Visible = false;
             // 
             // FrmAuthentification
             // 
@@ -97,13 +97,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(400, 247);
-            this.Controls.Add(this.txtGestionErreur);
+            this.Controls.Add(this.lblGestionErreur);
             this.Controls.Add(this.btnSeConnecter);
             this.Controls.Add(this.txtMotDePasse);
             this.Controls.Add(this.txtIdentifiant);
             this.Controls.Add(this.pbxLogo);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAuthentification";
             this.Text = "Authentification";
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
@@ -118,7 +118,7 @@
         private System.Windows.Forms.TextBox txtMotDePasse;
         private System.Windows.Forms.Button btnSeConnecter;
         private System.Windows.Forms.PictureBox pbxLogo;
-        private System.Windows.Forms.Label txtGestionErreur;
+        private System.Windows.Forms.Label lblGestionErreur;
     }
 }
 

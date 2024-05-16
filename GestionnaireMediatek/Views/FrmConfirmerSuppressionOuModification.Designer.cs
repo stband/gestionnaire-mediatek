@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.lblQuestion = new System.Windows.Forms.Label();
-            this.lblInfoPersonne = new System.Windows.Forms.Label();
+            this.lblInfoPersonnel = new System.Windows.Forms.Label();
             this.btnSupprimer = new System.Windows.Forms.Button();
-            this.panelRouge = new System.Windows.Forms.Panel();
+            this.panelCouleur = new System.Windows.Forms.Panel();
             this.btnAnnuler = new System.Windows.Forms.Button();
-            this.panelRouge.SuspendLayout();
+            this.panelCouleur.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblQuestion
@@ -46,16 +46,16 @@
             this.lblQuestion.Text = "Êtes-vous sûr de vouloir supprimer cette personne ?";
             this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblInfoPersonne
+            // lblInfoPersonnel
             // 
-            this.lblInfoPersonne.AutoSize = true;
-            this.lblInfoPersonne.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoPersonne.ForeColor = System.Drawing.Color.Black;
-            this.lblInfoPersonne.Location = new System.Drawing.Point(12, 61);
-            this.lblInfoPersonne.Name = "lblInfoPersonne";
-            this.lblInfoPersonne.Size = new System.Drawing.Size(242, 17);
-            this.lblInfoPersonne.TabIndex = 1;
-            this.lblInfoPersonne.Text = "Nom Prenom - service <nom_service>";
+            this.lblInfoPersonnel.AutoSize = true;
+            this.lblInfoPersonnel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfoPersonnel.ForeColor = System.Drawing.Color.Black;
+            this.lblInfoPersonnel.Location = new System.Drawing.Point(12, 61);
+            this.lblInfoPersonnel.Name = "lblInfoPersonnel";
+            this.lblInfoPersonnel.Size = new System.Drawing.Size(242, 17);
+            this.lblInfoPersonnel.TabIndex = 1;
+            this.lblInfoPersonnel.Text = "Nom Prenom - service <nom_service>";
             // 
             // btnSupprimer
             // 
@@ -67,15 +67,15 @@
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
             // 
-            // panelRouge
+            // panelCouleur
             // 
-            this.panelRouge.BackColor = System.Drawing.Color.LightCoral;
-            this.panelRouge.Controls.Add(this.lblQuestion);
-            this.panelRouge.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRouge.Location = new System.Drawing.Point(0, 0);
-            this.panelRouge.Name = "panelRouge";
-            this.panelRouge.Size = new System.Drawing.Size(392, 45);
-            this.panelRouge.TabIndex = 4;
+            this.panelCouleur.BackColor = System.Drawing.Color.LightCoral;
+            this.panelCouleur.Controls.Add(this.lblQuestion);
+            this.panelCouleur.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCouleur.Location = new System.Drawing.Point(0, 0);
+            this.panelCouleur.Name = "panelCouleur";
+            this.panelCouleur.Size = new System.Drawing.Size(392, 45);
+            this.panelCouleur.TabIndex = 4;
             // 
             // btnAnnuler
             // 
@@ -95,14 +95,14 @@
             this.ClientSize = new System.Drawing.Size(392, 132);
             this.ControlBox = false;
             this.Controls.Add(this.btnAnnuler);
-            this.Controls.Add(this.panelRouge);
+            this.Controls.Add(this.panelCouleur);
             this.Controls.Add(this.btnSupprimer);
-            this.Controls.Add(this.lblInfoPersonne);
+            this.Controls.Add(this.lblInfoPersonnel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmConfirmerSuppressionOuModification";
             this.Text = "Confirmer la suppression";
             this.TopMost = true;
-            this.panelRouge.ResumeLayout(false);
+            this.panelCouleur.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,9 +111,9 @@
         #endregion
 
         private System.Windows.Forms.Label lblQuestion;
-        private System.Windows.Forms.Label lblInfoPersonne;
+        private System.Windows.Forms.Label lblInfoPersonnel;
         private System.Windows.Forms.Button btnSupprimer;
-        private System.Windows.Forms.Panel panelRouge;
+        private System.Windows.Forms.Panel panelCouleur;
         private System.Windows.Forms.Button btnAnnuler;
     }
 }

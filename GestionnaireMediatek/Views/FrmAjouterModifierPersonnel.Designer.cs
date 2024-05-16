@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtInfo = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.txtNom = new System.Windows.Forms.TextBox();
             this.txtPrenom = new System.Windows.Forms.TextBox();
             this.txtTel = new System.Windows.Forms.TextBox();
@@ -41,16 +41,16 @@
             this.panelCouleur.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtInfo
+            // lblInfo
             // 
-            this.txtInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInfo.Location = new System.Drawing.Point(-4, 8);
-            this.txtInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(377, 28);
-            this.txtInfo.TabIndex = 0;
-            this.txtInfo.Text = "Informations du personnel à ajouter";
-            this.txtInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(-4, 8);
+            this.lblInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(377, 28);
+            this.lblInfo.TabIndex = 0;
+            this.lblInfo.Text = "Informations du personnel à ajouter";
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtNom
             // 
@@ -150,7 +150,7 @@
             // panelCouleur
             // 
             this.panelCouleur.BackColor = System.Drawing.Color.Tan;
-            this.panelCouleur.Controls.Add(this.txtInfo);
+            this.panelCouleur.Controls.Add(this.lblInfo);
             this.panelCouleur.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCouleur.Location = new System.Drawing.Point(0, 0);
             this.panelCouleur.Name = "panelCouleur";
@@ -185,7 +185,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label txtInfo;
+        private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.TextBox txtPrenom;
         private System.Windows.Forms.TextBox txtTel;
