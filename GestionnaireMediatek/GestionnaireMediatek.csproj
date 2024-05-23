@@ -1,163 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83B3667C-7BE9-4105-B33D-0823E3257C09}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>GestionnaireMediatek</RootNamespace>
-    <AssemblyName>GestionnaireMediatek</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
-  <PropertyGroup />
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="MySql.Data" Version="8.4.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Views\FrmAjouterModifierAbsence.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FrmAjouterModifierAbsence.Designer.cs">
-      <DependentUpon>FrmAjouterModifierAbsence.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FrmConfirmerSuppressionOuModificationAbsence.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FrmConfirmerSuppressionOuModificationAbsence.Designer.cs">
-      <DependentUpon>FrmConfirmerSuppressionOuModificationAbsence.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FrmGestionDesAbsences.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FrmGestionDesAbsences.Designer.cs">
-      <DependentUpon>FrmGestionDesAbsences.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FrmConfirmerSuppressionOuModification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FrmConfirmerSuppressionOuModification.Designer.cs">
-      <DependentUpon>FrmConfirmerSuppressionOuModification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FrmAjouterModifierPersonnel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FrmAjouterModifierPersonnel.Designer.cs">
-      <DependentUpon>FrmAjouterModifierPersonnel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FrmGestionDuPersonnel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FrmGestionDuPersonnel.Designer.cs">
-      <DependentUpon>FrmGestionDuPersonnel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FrmAuthentification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FrmAuthentification.Designer.cs">
-      <DependentUpon>FrmAuthentification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Views\FrmAjouterModifierAbsence.resx">
-      <DependentUpon>FrmAjouterModifierAbsence.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmConfirmerSuppressionOuModification.resx">
-      <DependentUpon>FrmConfirmerSuppressionOuModification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmAjouterModifierPersonnel.resx">
-      <DependentUpon>FrmAjouterModifierPersonnel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmConfirmerSuppressionOuModificationAbsence.resx">
-      <DependentUpon>FrmConfirmerSuppressionOuModificationAbsence.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmGestionDesAbsences.resx">
-      <DependentUpon>FrmGestionDesAbsences.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmGestionDuPersonnel.resx">
-      <DependentUpon>FrmGestionDuPersonnel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmAuthentification.resx">
-      <DependentUpon>FrmAuthentification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Folder Include="Models\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo_mediatek.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_pen_edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_trash_can.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Custom-Icon-Design-Mono-General-1-Delete.512.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Oxygen-Icons.org-Oxygen-Actions-list-add-user.256.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\full_logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Custom-Icon-Design-Pretty-Office-7-Calendar.256.png" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

@@ -63,6 +63,36 @@ namespace GestionnaireMediatek.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Mono_General_1_Delete_512 {
+            get {
+                object obj = ResourceManager.GetObject("Custom_Icon_Design_Mono_General_1_Delete_512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Pretty_Office_7_Calendar_256 {
+            get {
+                object obj = ResourceManager.GetObject("Custom_Icon_Design_Pretty_Office_7_Calendar_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap full_logo {
+            get {
+                object obj = ResourceManager.GetObject("full_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_ajouter_personnel {
             get {
                 object obj = ResourceManager.GetObject("icon_ajouter_personnel", resourceCulture);
@@ -73,9 +103,9 @@ namespace GestionnaireMediatek.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_delete {
+        internal static System.Drawing.Bitmap icon_pen_edit {
             get {
-                object obj = ResourceManager.GetObject("icon_delete", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_pen_edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +113,9 @@ namespace GestionnaireMediatek.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_edit {
+        internal static System.Drawing.Bitmap icon_trash_can {
             get {
-                object obj = ResourceManager.GetObject("icon_edit", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_trash_can", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,19 +123,9 @@ namespace GestionnaireMediatek.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_gestion_absence {
+        internal static System.Drawing.Bitmap logo {
             get {
-                object obj = ResourceManager.GetObject("icon_gestion_absence", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logo_app {
-            get {
-                object obj = ResourceManager.GetObject("logo_app", resourceCulture);
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
