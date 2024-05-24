@@ -1,43 +1,28 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 
-namespace GestionnaireMediatek
+namespace GestionnaireMediatek.bddmanager
 {
+    /// <summary>
+    /// Singleton : connexion à la base de données et exécution des requêtes
+    /// </summary>
     public class BddManager
     {
         private static BddManager instance = null;
         private readonly MySqlConnection connection;
 
-        private BddManager()
+        private BddManager(string stringConnect)
         {
-            try
-            {
-                string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString;
-                connection = new MySqlConnection(connectionString);
-                connection.Open();
-                Console.WriteLine("Connexion réussie à la base de données.");
-            }
-            catch (ConfigurationErrorsException ex)
-            {
-                Console.WriteLine("Erreur de configuration : " + ex.Message);
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Erreur de connexion à la base de données MySQL : " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erreur inconnue : " + ex.Message);
-            }
+            connection = new MySqlConnection(stringConnect);
+            connection.Open();
         }
 
-        public static BddManager GetInstance()
+        public static BddManager GetInstance(string stringConnect)
         {
             if (instance == null)
             {
-                instance = new BddManager();
+                instance = new BddManager(stringConnect);
             }
             return instance;
         }
@@ -85,35 +70,5 @@ namespace GestionnaireMediatek
             reader.Close();
             return records;
         }
-
-        public void TestConnection()
-        {
-            try
-            {
-                string query = "SELECT 1";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                var result = command.ExecuteScalar();
-                if (result != null)
-                {
-                    MessageBox.Show("Test de connexion réussi !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Échec du test de connexion.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Erreur MySQL : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur inconnue : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-        }
-
     }
 }
-
