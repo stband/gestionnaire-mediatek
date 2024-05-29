@@ -1,4 +1,5 @@
 ﻿using GestionnaireMediatek.bddmanager;
+using GestionnaireMediatek.Models;
 using System;
 using System.Configuration;
 
@@ -66,5 +67,18 @@ namespace GestionnaireMediatek.dal
                 returnValue = settings.ConnectionString;
             return returnValue;
         }
+
+        public List<Responsable> GetResponsables()
+        {
+            List<Responsable> responsables = new List<Responsable>();
+            string query = "SELECT * FROM responsable";
+            var records = Manager.ReqSelect(query);
+            foreach (var record in records)
+            {
+                responsables.Add(new Responsable((string)record[0], (string)record[1]));
+            }
+            return responsables;
+        }
+
     }
 }

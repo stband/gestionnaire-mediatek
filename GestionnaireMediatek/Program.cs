@@ -19,7 +19,12 @@ namespace GestionnaireMediatek
             {
                 // Initialisation de Access pour gérer la connexion
                 Access.GetInstance();
-                Application.Run(new FrmAuthentification());
+
+                FrmAuthentification frmAuthentification = new FrmAuthentification();
+                if (frmAuthentification.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new FrmGestionDuPersonnel());
+                }
             }
             catch (Exception ex)
             {
@@ -29,3 +34,4 @@ namespace GestionnaireMediatek
         }
     }
 }
+

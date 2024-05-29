@@ -28,88 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtIdentifiant = new System.Windows.Forms.TextBox();
-            this.txtMotDePasse = new System.Windows.Forms.TextBox();
-            this.btnSeConnecter = new System.Windows.Forms.Button();
-            this.pbxLogo = new System.Windows.Forms.PictureBox();
-            this.lblGestionErreur = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
-            this.SuspendLayout();
+            txtIdentifiant = new TextBox();
+            txtMotDePasse = new TextBox();
+            btnSeConnecter = new Button();
+            pbxLogo = new PictureBox();
+            lblGestionErreur = new Label();
+            ((System.ComponentModel.ISupportInitialize)pbxLogo).BeginInit();
+            SuspendLayout();
             // 
             // txtIdentifiant
             // 
-            this.txtIdentifiant.BackColor = System.Drawing.SystemColors.Window;
-            this.txtIdentifiant.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtIdentifiant.Location = new System.Drawing.Point(93, 119);
-            this.txtIdentifiant.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIdentifiant.Name = "txtIdentifiant";
-            this.txtIdentifiant.Size = new System.Drawing.Size(209, 25);
-            this.txtIdentifiant.TabIndex = 0;
-            this.txtIdentifiant.Text = "Identifiant";
+            txtIdentifiant.BackColor = SystemColors.Window;
+            txtIdentifiant.ForeColor = SystemColors.ScrollBar;
+            txtIdentifiant.Location = new Point(93, 119);
+            txtIdentifiant.Margin = new Padding(4);
+            txtIdentifiant.Name = "txtIdentifiant";
+            txtIdentifiant.Size = new Size(209, 25);
+            txtIdentifiant.TabIndex = 0;
+            txtIdentifiant.Text = "Identifiant";
             // 
             // txtMotDePasse
             // 
-            this.txtMotDePasse.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMotDePasse.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtMotDePasse.Location = new System.Drawing.Point(93, 149);
-            this.txtMotDePasse.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMotDePasse.Name = "txtMotDePasse";
-            this.txtMotDePasse.Size = new System.Drawing.Size(209, 25);
-            this.txtMotDePasse.TabIndex = 1;
-            this.txtMotDePasse.Text = "Mot de passe";
+            txtMotDePasse.BackColor = SystemColors.Window;
+            txtMotDePasse.ForeColor = SystemColors.ScrollBar;
+            txtMotDePasse.Location = new Point(93, 149);
+            txtMotDePasse.Margin = new Padding(4);
+            txtMotDePasse.Name = "txtMotDePasse";
+            txtMotDePasse.Size = new Size(209, 25);
+            txtMotDePasse.TabIndex = 1;
+            txtMotDePasse.Text = "Mot de passe";
             // 
             // btnSeConnecter
             // 
-            this.btnSeConnecter.Location = new System.Drawing.Point(93, 179);
-            this.btnSeConnecter.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSeConnecter.Name = "btnSeConnecter";
-            this.btnSeConnecter.Size = new System.Drawing.Size(210, 30);
-            this.btnSeConnecter.TabIndex = 2;
-            this.btnSeConnecter.Text = "Se connecter";
-            this.btnSeConnecter.UseVisualStyleBackColor = true;
+            btnSeConnecter.Location = new Point(93, 179);
+            btnSeConnecter.Margin = new Padding(4);
+            btnSeConnecter.Name = "btnSeConnecter";
+            btnSeConnecter.Size = new Size(210, 30);
+            btnSeConnecter.TabIndex = 2;
+            btnSeConnecter.Text = "Se connecter";
+            btnSeConnecter.UseVisualStyleBackColor = true;
+            btnSeConnecter.Click += btnSeConnecter_Click;
             // 
             // pbxLogo
             // 
-            this.pbxLogo.Image = global::GestionnaireMediatek.Properties.Resources.logo_mediatek;
-            this.pbxLogo.Location = new System.Drawing.Point(41, -97);
-            this.pbxLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.pbxLogo.Name = "pbxLogo";
-            this.pbxLogo.Size = new System.Drawing.Size(296, 285);
-            this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxLogo.TabIndex = 3;
-            this.pbxLogo.TabStop = false;
+            pbxLogo.Image = Properties.Resources.logo_mediatek;
+            pbxLogo.Location = new Point(41, -97);
+            pbxLogo.Margin = new Padding(4);
+            pbxLogo.Name = "pbxLogo";
+            pbxLogo.Size = new Size(296, 285);
+            pbxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxLogo.TabIndex = 3;
+            pbxLogo.TabStop = false;
             // 
             // lblGestionErreur
             // 
-            this.lblGestionErreur.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionErreur.ForeColor = System.Drawing.Color.Red;
-            this.lblGestionErreur.Location = new System.Drawing.Point(12, 219);
-            this.lblGestionErreur.Name = "lblGestionErreur";
-            this.lblGestionErreur.Size = new System.Drawing.Size(376, 13);
-            this.lblGestionErreur.TabIndex = 4;
-            this.lblGestionErreur.Text = "Identifiant ou mot de passe incorrect. Veuillez réessayer.";
-            this.lblGestionErreur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblGestionErreur.Visible = false;
+            lblGestionErreur.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGestionErreur.ForeColor = Color.Red;
+            lblGestionErreur.Location = new Point(12, 219);
+            lblGestionErreur.Name = "lblGestionErreur";
+            lblGestionErreur.Size = new Size(376, 13);
+            lblGestionErreur.TabIndex = 4;
+            lblGestionErreur.Text = "Identifiant ou mot de passe incorrect. Veuillez réessayer.";
+            lblGestionErreur.TextAlign = ContentAlignment.MiddleCenter;
+            lblGestionErreur.Visible = false;
             // 
             // FrmAuthentification
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(400, 247);
-            this.Controls.Add(this.lblGestionErreur);
-            this.Controls.Add(this.btnSeConnecter);
-            this.Controls.Add(this.txtMotDePasse);
-            this.Controls.Add(this.txtIdentifiant);
-            this.Controls.Add(this.pbxLogo);
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmAuthentification";
-            this.Text = "Authentification";
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
+            ClientSize = new Size(400, 247);
+            Controls.Add(lblGestionErreur);
+            Controls.Add(btnSeConnecter);
+            Controls.Add(txtMotDePasse);
+            Controls.Add(txtIdentifiant);
+            Controls.Add(pbxLogo);
+            Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Margin = new Padding(4);
+            Name = "FrmAuthentification";
+            Text = "Authentification";
+            ((System.ComponentModel.ISupportInitialize)pbxLogo).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
