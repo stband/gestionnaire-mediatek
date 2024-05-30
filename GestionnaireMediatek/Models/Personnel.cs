@@ -31,13 +31,21 @@
         public string Mail { get; set; }
 
         /// <summary>
-        /// Indique si le personnel a des droits administratifs.
-        /// </summary>
-        public int IdAdmin { get; set; }
-
-        /// <summary>
         /// Identifiant du service auquel le personnel est rattaché.
         /// </summary>
         public int IdService { get; set; }
+
+        /// <summary>
+        /// Constructeur de la classe Personnel.
+        /// </summary>
+        public Personnel(int idPersonnel, string nom, string prenom, string tel, string mail, int idService)
+        {
+            IdPersonnel = idPersonnel;
+            Nom = nom;
+            Prenom = prenom;
+            Tel = tel;
+            Mail = mail;
+            IdService = idService;
+        }
     }
 }

@@ -80,5 +80,24 @@ namespace GestionnaireMediatek.dal
             return responsables;
         }
 
+        public List<Personnel> GetPersonnel()
+        {
+            List<Personnel> personnelList = new List<Personnel>();
+            string query = "SELECT idPersonnel, nom, prenom, tel, mail, idService FROM personnel";
+            var records = Manager.ReqSelect(query);
+            foreach (var record in records)
+            {
+                personnelList.Add(new Personnel(
+                    (int)record[0],
+                    (string)record[1],
+                    (string)record[2],
+                    (string)record[3],
+                    (string)record[4],
+                    (int)record[5]
+                ));
+            }
+            return personnelList;
+        }
+
     }
 }

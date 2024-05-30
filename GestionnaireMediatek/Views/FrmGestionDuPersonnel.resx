@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+  <!--
     Microsoft ResX Schema 
-    
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,56 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="colonneNom.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="colonneNom.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="colonnePrenom.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="colonnePrenom.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="colonneService.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="colonneService.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="colonneTel.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="colonneTel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="colonneEmail.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="colonneEmail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="colonneModifierPersonnel.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="colonneModifierPersonnel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="colonneModifierPersonnel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAABHRJREFUaEPV
-        mj9S20AUhxkSuAAFRbiBwUDBGdLQcwRS5gy+AgegoGKYCdwiM1QwGQroOEGqMFCQ5PdtdjVPq2dbWgnH
-        FJ93tXrv9/bPk2xpvfL566HL7u7ugTgVj+JVvIhbMRGbnk8f0IzaxCAWMYlNHw48H2g07OzsrMnhZG9v
-        71X8Uf03ZSIe/1R5lPuWghaaRt/Gos5gTsbj8VruWztQ5z/K8ALHFiB6bP1LQCNqeTFyLsW69a8qdF4j
-        vchGTv1J5bW4EyFQbKdklb5YwS7gazVBdTSJdR1j56txpXo1iPAR0yZ0PjM+V30jGau+Lx4yGzrQeRDy
-        C53PtB6IkWyUMhtqO89sqH9L6RQM1XCCQcbZ9vb2hySWUPuWIJC17ZRO2EYfq4HmVm47Go0+qP3M2CVO
-        OM9MHIh8Gen8ai6W0PlPIqxEtMe3VTphI/sw8wm00PTsQYNY1fkzYx/iqTxA8NQ0YnDuzXwOAWXbKZ10
-        vpHzYmbnE6yEbGvppPKUjnCvTcvyJKqcn4dsW6cTbfGctXXTZhpcE7L/ZfwfmRV7IV17jrOQ39x0oq72
-        Km2iTauZz5Hf9+iPzisNL0b0znOaBx2Rr5tOKr1bZVHnQf4/kpbKZ4Lz1Z2WhEDVbawL8puWTr3SxiI/
-        buNW74YRTeJo0gz1CeClU++0Aflt4W91VU64MDZ1wG8bGwzD0kBeOgVNznk+88APf6OFLn3eTAZHIl/q
-        e1E8W8KmU+9VjToJ+hp+TFrDY43K3pEYbe/AUWOwtBF0vrpN1xx00r1jqOyz9EOmTe32DDUnwEDGjXu2
-        KOpICXSemDF26kej81A7SMi497dmKcSIsWzsWtpYGg0JRitq6SSK87kNaIu5aWNxGxM4SqRKJ9DxvcrB
-        B0HnpdsqbSxuo0Uib55OaEVNG2Nq2ljcxhxmQYSVQDyWg1zY0umcNha30QNBhM0AKHsNgs6jkTSjbuvO
-        g9voIeFwPRDM0OuixjdqWE1iDDsAZkQ0UkgsfwpJsPqJYQLQ+UEvYjSNPrH6X8QS8NKm+EfeLNAUndPJ
-        bQTNwPv9IpOj+8tULOSnRIzVKp0aDTIc/G7TFWLFmLYPbjrVDjTSRtqoXtx5/KRR7Ets0w83nazDmz3Q
-        iNJBtHugUYP3SNln5hf3SKmK+1Av+qRNPmtBU+WQ6fTvoV4fbOvY0fWdLb4nrJ5lyBcFMOHCvTWj4hoo
-        erElv5CvUSfNFHpDXlf76CUtleHF1n95taiyaCXkV3+1qIqdoYW+3BWdByGf+stdfbyb1+uydV+vNzY4
-        xuPx0m1wsOki2+YGhyruFpMGscgtppkvCtjuko2/xYSBKu4mn7cSai9+AE9gG32shptOzLzap2/y8TEa
-        jdhmvcxGSL22zarjhW6zqj5tm/WSrWFsKkGNdF0nrxzjpdvoVufrG90JBiFDtvPz5fLolDbTQCNqeTFy
-        mHn/rwaJmE5L+WePlDaW2oFFTtydwt9tEBDP4kbHb/J3m7hThPZNjEWnic1tfsrfbQ5X/gJ7/Ug4dQYE
-        DAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="colonneSupprimerPersonnel.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="colonneSupprimerPersonnel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="colonneGestionAbsencePersonnel.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="colonneGestionAbsencePersonnel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="dataGridViewImageColumn2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
