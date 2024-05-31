@@ -35,19 +35,22 @@
             txtRechercher = new TextBox();
             btnEffacerRecherche = new Button();
             dgvListePersonnel = new DataGridView();
-            dataGridViewImageColumn1 = new DataGridViewImageColumn();
-            pbxAjouterPersonnel = new PictureBox();
-            dataGridViewImageColumn2 = new DataGridViewImageColumn();
             colonneNom = new DataGridViewTextBoxColumn();
             colonnePrenom = new DataGridViewTextBoxColumn();
             colonneService = new DataGridViewTextBoxColumn();
             colonneTel = new DataGridViewTextBoxColumn();
             colonneEmail = new DataGridViewTextBoxColumn();
-            colonneModifierPersonnel = new DataGridViewImageColumn();
-            colonneSupprimerPersonnel = new DataGridViewImageColumn();
-            colonneGestionAbsencePersonnel = new DataGridViewImageColumn();
+            dataGridViewImageColumn1 = new DataGridViewImageColumn();
+            pbxAjouterPersonnel = new PictureBox();
+            dataGridViewImageColumn2 = new DataGridViewImageColumn();
+            pbxModifierPersonnel = new PictureBox();
+            pbxSupprimerPersonnel = new PictureBox();
+            pbxGestionAbsence = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvListePersonnel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxAjouterPersonnel).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxModifierPersonnel).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxSupprimerPersonnel).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxGestionAbsence).BeginInit();
             SuspendLayout();
             // 
             // txtRechercher
@@ -55,10 +58,10 @@
             txtRechercher.BackColor = SystemColors.Window;
             txtRechercher.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtRechercher.ForeColor = SystemColors.GrayText;
-            txtRechercher.Location = new Point(14, 16);
+            txtRechercher.Location = new Point(13, 13);
             txtRechercher.Margin = new Padding(4);
             txtRechercher.Name = "txtRechercher";
-            txtRechercher.Size = new Size(424, 25);
+            txtRechercher.Size = new Size(424, 29);
             txtRechercher.TabIndex = 0;
             txtRechercher.Text = "Rechercher";
             // 
@@ -67,7 +70,7 @@
             btnEffacerRecherche.BackColor = Color.Transparent;
             btnEffacerRecherche.FlatAppearance.BorderSize = 4;
             btnEffacerRecherche.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEffacerRecherche.Location = new Point(446, 16);
+            btnEffacerRecherche.Location = new Point(445, 13);
             btnEffacerRecherche.Margin = new Padding(4);
             btnEffacerRecherche.Name = "btnEffacerRecherche";
             btnEffacerRecherche.Size = new Size(135, 26);
@@ -92,7 +95,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvListePersonnel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvListePersonnel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListePersonnel.Columns.AddRange(new DataGridViewColumn[] { colonneNom, colonnePrenom, colonneService, colonneTel, colonneEmail, colonneModifierPersonnel, colonneSupprimerPersonnel, colonneGestionAbsencePersonnel });
+            dgvListePersonnel.Columns.AddRange(new DataGridViewColumn[] { colonneNom, colonnePrenom, colonneService, colonneTel, colonneEmail });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Menu;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -102,11 +105,10 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvListePersonnel.DefaultCellStyle = dataGridViewCellStyle2;
             dgvListePersonnel.GridColor = SystemColors.ControlDarkDark;
-            dgvListePersonnel.Location = new Point(-1, 60);
+            dgvListePersonnel.Location = new Point(-1, 64);
             dgvListePersonnel.Margin = new Padding(4);
             dgvListePersonnel.MultiSelect = false;
             dgvListePersonnel.Name = "dgvListePersonnel";
-            dgvListePersonnel.ReadOnly = true;
             dgvListePersonnel.RightToLeft = RightToLeft.No;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
@@ -120,8 +122,43 @@
             dgvListePersonnel.RowHeadersWidth = 20;
             dgvListePersonnel.ScrollBars = ScrollBars.Vertical;
             dgvListePersonnel.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvListePersonnel.Size = new Size(685, 356);
+            dgvListePersonnel.Size = new Size(685, 352);
             dgvListePersonnel.TabIndex = 2;
+            // 
+            // colonneNom
+            // 
+            colonneNom.FillWeight = 101.7259F;
+            colonneNom.HeaderText = "Nom";
+            colonneNom.MinimumWidth = 6;
+            colonneNom.Name = "colonneNom";
+            // 
+            // colonnePrenom
+            // 
+            colonnePrenom.FillWeight = 101.7259F;
+            colonnePrenom.HeaderText = "Prenom";
+            colonnePrenom.MinimumWidth = 6;
+            colonnePrenom.Name = "colonnePrenom";
+            // 
+            // colonneService
+            // 
+            colonneService.FillWeight = 101.7259F;
+            colonneService.HeaderText = "Service";
+            colonneService.MinimumWidth = 6;
+            colonneService.Name = "colonneService";
+            // 
+            // colonneTel
+            // 
+            colonneTel.FillWeight = 101.7259F;
+            colonneTel.HeaderText = "Tel";
+            colonneTel.MinimumWidth = 6;
+            colonneTel.Name = "colonneTel";
+            // 
+            // colonneEmail
+            // 
+            colonneEmail.FillWeight = 101.7259F;
+            colonneEmail.HeaderText = "Email";
+            colonneEmail.MinimumWidth = 6;
+            colonneEmail.Name = "colonneEmail";
             // 
             // dataGridViewImageColumn1
             // 
@@ -129,17 +166,19 @@
             dataGridViewImageColumn1.HeaderText = "";
             dataGridViewImageColumn1.Image = Properties.Resources.logo_mediatek;
             dataGridViewImageColumn1.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dataGridViewImageColumn1.MinimumWidth = 6;
             dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             dataGridViewImageColumn1.ReadOnly = true;
             dataGridViewImageColumn1.Resizable = DataGridViewTriState.False;
+            dataGridViewImageColumn1.Width = 125;
             // 
             // pbxAjouterPersonnel
             // 
             pbxAjouterPersonnel.BackgroundImageLayout = ImageLayout.None;
             pbxAjouterPersonnel.Image = Properties.Resources.icon_ajouter_personnel;
-            pbxAjouterPersonnel.Location = new Point(612, 12);
+            pbxAjouterPersonnel.Location = new Point(634, 3);
             pbxAjouterPersonnel.Name = "pbxAjouterPersonnel";
-            pbxAjouterPersonnel.Size = new Size(43, 38);
+            pbxAjouterPersonnel.Size = new Size(26, 24);
             pbxAjouterPersonnel.SizeMode = PictureBoxSizeMode.StretchImage;
             pbxAjouterPersonnel.TabIndex = 3;
             pbxAjouterPersonnel.TabStop = false;
@@ -149,73 +188,53 @@
             dataGridViewImageColumn2.HeaderText = "";
             dataGridViewImageColumn2.Image = (Image)resources.GetObject("dataGridViewImageColumn2.Image");
             dataGridViewImageColumn2.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            dataGridViewImageColumn2.MinimumWidth = 6;
             dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            dataGridViewImageColumn2.Width = 125;
             // 
-            // colonneNom
+            // pbxModifierPersonnel
             // 
-            colonneNom.FillWeight = 101.7259F;
-            colonneNom.HeaderText = "Nom";
-            colonneNom.Name = "colonneNom";
-            colonneNom.ReadOnly = true;
+            pbxModifierPersonnel.BackgroundImageLayout = ImageLayout.None;
+            pbxModifierPersonnel.Image = Properties.Resources.icon_pen_edit;
+            pbxModifierPersonnel.Location = new Point(602, 3);
+            pbxModifierPersonnel.Name = "pbxModifierPersonnel";
+            pbxModifierPersonnel.Size = new Size(26, 24);
+            pbxModifierPersonnel.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxModifierPersonnel.TabIndex = 4;
+            pbxModifierPersonnel.TabStop = false;
+            pbxModifierPersonnel.Click += pbxModifierPersonnel_Click;
             // 
-            // colonnePrenom
+            // pbxSupprimerPersonnel
             // 
-            colonnePrenom.FillWeight = 101.7259F;
-            colonnePrenom.HeaderText = "Prenom";
-            colonnePrenom.Name = "colonnePrenom";
-            colonnePrenom.ReadOnly = true;
+            pbxSupprimerPersonnel.BackgroundImageLayout = ImageLayout.None;
+            pbxSupprimerPersonnel.Image = Properties.Resources.icon_trash_can;
+            pbxSupprimerPersonnel.Location = new Point(634, 33);
+            pbxSupprimerPersonnel.Name = "pbxSupprimerPersonnel";
+            pbxSupprimerPersonnel.Size = new Size(26, 24);
+            pbxSupprimerPersonnel.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxSupprimerPersonnel.TabIndex = 5;
+            pbxSupprimerPersonnel.TabStop = false;
             // 
-            // colonneService
+            // pbxGestionAbsence
             // 
-            colonneService.FillWeight = 101.7259F;
-            colonneService.HeaderText = "Service";
-            colonneService.Name = "colonneService";
-            colonneService.ReadOnly = true;
-            // 
-            // colonneTel
-            // 
-            colonneTel.FillWeight = 101.7259F;
-            colonneTel.HeaderText = "Tel";
-            colonneTel.Name = "colonneTel";
-            colonneTel.ReadOnly = true;
-            // 
-            // colonneEmail
-            // 
-            colonneEmail.FillWeight = 101.7259F;
-            colonneEmail.HeaderText = "Email";
-            colonneEmail.Name = "colonneEmail";
-            colonneEmail.ReadOnly = true;
-            // 
-            // colonneModifierPersonnel
-            // 
-            colonneModifierPersonnel.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            colonneModifierPersonnel.HeaderText = "";
-            colonneModifierPersonnel.Name = "colonneModifierPersonnel";
-            colonneModifierPersonnel.ReadOnly = true;
-            colonneModifierPersonnel.Width = 5;
-            // 
-            // colonneSupprimerPersonnel
-            // 
-            colonneSupprimerPersonnel.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            colonneSupprimerPersonnel.HeaderText = "";
-            colonneSupprimerPersonnel.Name = "colonneSupprimerPersonnel";
-            colonneSupprimerPersonnel.ReadOnly = true;
-            colonneSupprimerPersonnel.Width = 5;
-            // 
-            // colonneGestionAbsencePersonnel
-            // 
-            colonneGestionAbsencePersonnel.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            colonneGestionAbsencePersonnel.HeaderText = "";
-            colonneGestionAbsencePersonnel.Name = "colonneGestionAbsencePersonnel";
-            colonneGestionAbsencePersonnel.ReadOnly = true;
-            colonneGestionAbsencePersonnel.Width = 5;
+            pbxGestionAbsence.BackgroundImageLayout = ImageLayout.None;
+            pbxGestionAbsence.Image = Properties.Resources.Custom_Icon_Design_Pretty_Office_7_Calendar_256;
+            pbxGestionAbsence.Location = new Point(602, 33);
+            pbxGestionAbsence.Name = "pbxGestionAbsence";
+            pbxGestionAbsence.Size = new Size(26, 24);
+            pbxGestionAbsence.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxGestionAbsence.TabIndex = 6;
+            pbxGestionAbsence.TabStop = false;
             // 
             // FrmGestionDuPersonnel
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(684, 415);
+            Controls.Add(pbxGestionAbsence);
+            Controls.Add(pbxSupprimerPersonnel);
+            Controls.Add(pbxModifierPersonnel);
             Controls.Add(pbxAjouterPersonnel);
             Controls.Add(dgvListePersonnel);
             Controls.Add(btnEffacerRecherche);
@@ -229,6 +248,9 @@
             Text = "Gestion du personnel";
             ((System.ComponentModel.ISupportInitialize)dgvListePersonnel).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxAjouterPersonnel).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxModifierPersonnel).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxSupprimerPersonnel).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxGestionAbsence).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -246,8 +268,8 @@
         private DataGridViewTextBoxColumn colonneService;
         private DataGridViewTextBoxColumn colonneTel;
         private DataGridViewTextBoxColumn colonneEmail;
-        private DataGridViewImageColumn colonneModifierPersonnel;
-        private DataGridViewImageColumn colonneSupprimerPersonnel;
-        private DataGridViewImageColumn colonneGestionAbsencePersonnel;
+        private PictureBox pbxModifierPersonnel;
+        private PictureBox pbxSupprimerPersonnel;
+        private PictureBox pbxGestionAbsence;
     }
 }

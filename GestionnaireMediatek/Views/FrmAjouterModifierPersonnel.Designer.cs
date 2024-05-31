@@ -28,159 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblInfo = new System.Windows.Forms.Label();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.txtPrenom = new System.Windows.Forms.TextBox();
-            this.txtTel = new System.Windows.Forms.TextBox();
-            this.txtMail = new System.Windows.Forms.TextBox();
-            this.cbxServiceAffectation = new System.Windows.Forms.ComboBox();
-            this.btnAjouter = new System.Windows.Forms.Button();
-            this.btnAnnuler = new System.Windows.Forms.Button();
-            this.lblGestionErreur = new System.Windows.Forms.Label();
-            this.panelCouleur = new System.Windows.Forms.Panel();
-            this.panelCouleur.SuspendLayout();
-            this.SuspendLayout();
+            lblInfo = new Label();
+            txtNom = new TextBox();
+            txtPrenom = new TextBox();
+            txtTel = new TextBox();
+            txtMail = new TextBox();
+            cbxServiceAffectation = new ComboBox();
+            btnAjouter = new Button();
+            btnAnnuler = new Button();
+            lblGestionErreur = new Label();
+            panelCouleur = new Panel();
+            panelCouleur.SuspendLayout();
+            SuspendLayout();
             // 
             // lblInfo
             // 
-            this.lblInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(-4, 8);
-            this.lblInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(377, 28);
-            this.lblInfo.TabIndex = 0;
-            this.lblInfo.Text = "Informations du personnel à ajouter";
-            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInfo.Location = new Point(-4, 8);
+            lblInfo.Margin = new Padding(4, 0, 4, 0);
+            lblInfo.Name = "lblInfo";
+            lblInfo.Size = new Size(377, 28);
+            lblInfo.TabIndex = 0;
+            lblInfo.Text = "Informations du personnel à ajouter";
+            lblInfo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtNom
             // 
-            this.txtNom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtNom.Location = new System.Drawing.Point(21, 60);
-            this.txtNom.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(335, 25);
-            this.txtNom.TabIndex = 1;
-            this.txtNom.Text = "Nom";
+            txtNom.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNom.ForeColor = SystemColors.GrayText;
+            txtNom.Location = new Point(21, 60);
+            txtNom.Margin = new Padding(4);
+            txtNom.Name = "txtNom";
+            txtNom.Size = new Size(335, 25);
+            txtNom.TabIndex = 1;
+            txtNom.Text = "Nom";
             // 
             // txtPrenom
             // 
-            this.txtPrenom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrenom.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtPrenom.Location = new System.Drawing.Point(21, 93);
-            this.txtPrenom.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPrenom.Name = "txtPrenom";
-            this.txtPrenom.Size = new System.Drawing.Size(335, 25);
-            this.txtPrenom.TabIndex = 2;
-            this.txtPrenom.Text = "Prenom";
+            txtPrenom.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPrenom.ForeColor = SystemColors.GrayText;
+            txtPrenom.Location = new Point(21, 93);
+            txtPrenom.Margin = new Padding(4);
+            txtPrenom.Name = "txtPrenom";
+            txtPrenom.Size = new Size(335, 25);
+            txtPrenom.TabIndex = 2;
+            txtPrenom.Text = "Prenom";
             // 
             // txtTel
             // 
-            this.txtTel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtTel.Location = new System.Drawing.Point(21, 126);
-            this.txtTel.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(335, 25);
-            this.txtTel.TabIndex = 3;
-            this.txtTel.Text = "Tel";
+            txtTel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTel.ForeColor = SystemColors.GrayText;
+            txtTel.Location = new Point(21, 126);
+            txtTel.Margin = new Padding(4);
+            txtTel.Name = "txtTel";
+            txtTel.Size = new Size(335, 25);
+            txtTel.TabIndex = 3;
+            txtTel.Text = "Tel";
             // 
             // txtMail
             // 
-            this.txtMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMail.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtMail.Location = new System.Drawing.Point(21, 159);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(335, 25);
-            this.txtMail.TabIndex = 4;
-            this.txtMail.Text = "Mail";
+            txtMail.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtMail.ForeColor = SystemColors.GrayText;
+            txtMail.Location = new Point(21, 159);
+            txtMail.Margin = new Padding(4);
+            txtMail.Name = "txtMail";
+            txtMail.Size = new Size(335, 25);
+            txtMail.TabIndex = 4;
+            txtMail.Text = "Mail";
             // 
             // cbxServiceAffectation
             // 
-            this.cbxServiceAffectation.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxServiceAffectation.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.cbxServiceAffectation.FormattingEnabled = true;
-            this.cbxServiceAffectation.Items.AddRange(new object[] {
-            "Administratif",
-            "jsp",
-            "autre",
-            ""});
-            this.cbxServiceAffectation.Location = new System.Drawing.Point(21, 192);
-            this.cbxServiceAffectation.Margin = new System.Windows.Forms.Padding(4);
-            this.cbxServiceAffectation.Name = "cbxServiceAffectation";
-            this.cbxServiceAffectation.Size = new System.Drawing.Size(335, 25);
-            this.cbxServiceAffectation.TabIndex = 5;
-            this.cbxServiceAffectation.Text = "Service d\'affectation";
+            cbxServiceAffectation.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxServiceAffectation.ForeColor = SystemColors.GrayText;
+            cbxServiceAffectation.FormattingEnabled = true;
+            cbxServiceAffectation.Items.AddRange(new object[] { "Administratif", "jsp", "autre", "" });
+            cbxServiceAffectation.Location = new Point(21, 192);
+            cbxServiceAffectation.Margin = new Padding(4);
+            cbxServiceAffectation.Name = "cbxServiceAffectation";
+            cbxServiceAffectation.Size = new Size(335, 25);
+            cbxServiceAffectation.TabIndex = 5;
+            cbxServiceAffectation.Text = "Service d'affectation";
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(21, 230);
-            this.btnAjouter.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(166, 27);
-            this.btnAjouter.TabIndex = 6;
-            this.btnAjouter.Text = "Ajouter";
-            this.btnAjouter.UseVisualStyleBackColor = true;
+            btnAjouter.Location = new Point(21, 230);
+            btnAjouter.Margin = new Padding(4);
+            btnAjouter.Name = "btnAjouter";
+            btnAjouter.Size = new Size(166, 27);
+            btnAjouter.TabIndex = 6;
+            btnAjouter.Text = "Ajouter";
+            btnAjouter.UseVisualStyleBackColor = true;
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(190, 230);
-            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(166, 27);
-            this.btnAnnuler.TabIndex = 7;
-            this.btnAnnuler.Text = "Annuler";
-            this.btnAnnuler.UseVisualStyleBackColor = true;
+            btnAnnuler.Location = new Point(190, 230);
+            btnAnnuler.Margin = new Padding(4);
+            btnAnnuler.Name = "btnAnnuler";
+            btnAnnuler.Size = new Size(166, 27);
+            btnAnnuler.TabIndex = 7;
+            btnAnnuler.Text = "Annuler";
+            btnAnnuler.UseVisualStyleBackColor = true;
+            btnAnnuler.Click += btnAnnuler_Click;
             // 
             // lblGestionErreur
             // 
-            this.lblGestionErreur.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblGestionErreur.BackColor = System.Drawing.Color.Transparent;
-            this.lblGestionErreur.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionErreur.ForeColor = System.Drawing.Color.Red;
-            this.lblGestionErreur.Location = new System.Drawing.Point(21, 267);
-            this.lblGestionErreur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblGestionErreur.Name = "lblGestionErreur";
-            this.lblGestionErreur.Size = new System.Drawing.Size(335, 13);
-            this.lblGestionErreur.TabIndex = 8;
-            this.lblGestionErreur.Text = "lbltext gestion des erreurs";
-            this.lblGestionErreur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblGestionErreur.Anchor = AnchorStyles.None;
+            lblGestionErreur.BackColor = Color.Transparent;
+            lblGestionErreur.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGestionErreur.ForeColor = Color.Red;
+            lblGestionErreur.Location = new Point(21, 267);
+            lblGestionErreur.Margin = new Padding(4, 0, 4, 0);
+            lblGestionErreur.Name = "lblGestionErreur";
+            lblGestionErreur.Size = new Size(335, 13);
+            lblGestionErreur.TabIndex = 8;
+            lblGestionErreur.Text = "lbltext gestion des erreurs";
+            lblGestionErreur.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelCouleur
             // 
-            this.panelCouleur.BackColor = System.Drawing.Color.Tan;
-            this.panelCouleur.Controls.Add(this.lblInfo);
-            this.panelCouleur.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCouleur.Location = new System.Drawing.Point(0, 0);
-            this.panelCouleur.Name = "panelCouleur";
-            this.panelCouleur.Size = new System.Drawing.Size(376, 45);
-            this.panelCouleur.TabIndex = 9;
+            panelCouleur.BackColor = Color.Tan;
+            panelCouleur.Controls.Add(lblInfo);
+            panelCouleur.Dock = DockStyle.Top;
+            panelCouleur.Location = new Point(0, 0);
+            panelCouleur.Name = "panelCouleur";
+            panelCouleur.Size = new Size(376, 45);
+            panelCouleur.TabIndex = 9;
             // 
             // FrmAjouterModifierPersonnel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(376, 298);
-            this.Controls.Add(this.panelCouleur);
-            this.Controls.Add(this.lblGestionErreur);
-            this.Controls.Add(this.btnAnnuler);
-            this.Controls.Add(this.btnAjouter);
-            this.Controls.Add(this.cbxServiceAffectation);
-            this.Controls.Add(this.txtMail);
-            this.Controls.Add(this.txtTel);
-            this.Controls.Add(this.txtPrenom);
-            this.Controls.Add(this.txtNom);
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmAjouterModifierPersonnel";
-            this.Text = "Ajouter un nouveau personnel";
-            this.panelCouleur.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(376, 298);
+            Controls.Add(panelCouleur);
+            Controls.Add(lblGestionErreur);
+            Controls.Add(btnAnnuler);
+            Controls.Add(btnAjouter);
+            Controls.Add(cbxServiceAffectation);
+            Controls.Add(txtMail);
+            Controls.Add(txtTel);
+            Controls.Add(txtPrenom);
+            Controls.Add(txtNom);
+            Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
+            Name = "FrmAjouterModifierPersonnel";
+            Text = "Ajouter un nouveau personnel";
+            panelCouleur.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

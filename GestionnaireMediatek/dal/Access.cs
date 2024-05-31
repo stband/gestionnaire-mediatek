@@ -99,5 +99,20 @@ namespace GestionnaireMediatek.dal
             return personnelList;
         }
 
+        public void UpdatePersonnel(Personnel personnel)
+        {
+            string query = "UPDATE personnel SET nom = @Nom, prenom = @Prenom, tel = @Tel, mail = @Mail, idService = @IdService WHERE idPersonnel = @IdPersonnel";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@Nom", personnel.Nom },
+                { "@Prenom", personnel.Prenom },
+                { "@Tel", personnel.Tel },
+                { "@Mail", personnel.Mail },
+                { "@IdService", personnel.IdService },
+                { "@IdPersonnel", personnel.IdPersonnel }
+            };
+
+            Manager.ReqUpdate(query, parameters);
+        }
     }
 }

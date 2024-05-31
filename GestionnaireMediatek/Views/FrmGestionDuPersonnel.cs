@@ -88,5 +88,29 @@ namespace GestionnaireMediatek.Views
             txtRechercher.Text = placeholderText;
             txtRechercher.ForeColor = System.Drawing.SystemColors.GrayText;
         }
+
+        private void pbxModifierPersonnel_Click(object sender, EventArgs e)
+        {
+            // Vérifiez si une ligne est sélectionnée dans le DataGridView
+            if (dgvListePersonnel.SelectedRows.Count > 0)
+            {
+                // Récupérer l'index de la ligne sélectionnée
+                int selectedRowIndex = dgvListePersonnel.SelectedRows[0].Index;
+
+                // Récupérer les données du personnel de la ligne sélectionnée
+                var selectedPersonnel = personnelList[selectedRowIndex];
+
+                // Ouvrir le formulaire de modification en passant les informations du personnel sélectionné
+                FrmAjouterModifierPersonnel frmModifierPersonnel = new FrmAjouterModifierPersonnel(selectedPersonnel);
+                frmModifierPersonnel.ShowDialog();
+
+                // Recharger les données après modification
+                LoadPersonnelData();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner une ligne du tableau pour modifier les informations du personnel.", "Aucune sélection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

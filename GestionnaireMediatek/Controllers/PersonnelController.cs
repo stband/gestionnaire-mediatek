@@ -10,5 +10,10 @@ namespace GestionnaireMediatek.Controllers
         {
             return Access.GetInstance().GetPersonnel();
         }
+
+        public static void UpdatePersonnel(Personnel personnel)
+        {
+            Access.GetInstance().UpdatePersonnel(personnel);
+        }
     }
 }
