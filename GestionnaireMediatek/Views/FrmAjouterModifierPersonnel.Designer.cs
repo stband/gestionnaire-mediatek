@@ -101,7 +101,7 @@
             cbxServiceAffectation.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxServiceAffectation.ForeColor = SystemColors.GrayText;
             cbxServiceAffectation.FormattingEnabled = true;
-            cbxServiceAffectation.Items.AddRange(new object[] { "Administratif", "jsp", "autre", "" });
+            cbxServiceAffectation.Items.AddRange(new object[] { "Administratif", "Médiation culturelle", "Prêt" });
             cbxServiceAffectation.Location = new Point(21, 192);
             cbxServiceAffectation.Margin = new Padding(4);
             cbxServiceAffectation.Name = "cbxServiceAffectation";

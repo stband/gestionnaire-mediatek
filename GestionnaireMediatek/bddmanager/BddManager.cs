@@ -57,7 +57,7 @@ namespace GestionnaireMediatek.bddmanager
         /// </summary>
         /// <param name="stringQuery">requête</param>
         /// <param name="parameters">dictionnaire contenant les paramètres</param>
-        public void ReqUpdate(string stringQuery, Dictionary<string, object> parameters = null)
+        public void ReqUpdate(string stringQuery, Dictionary<string, object> parameters)
         {
             MySqlCommand command = new MySqlCommand(stringQuery, connection);
             if (parameters != null)
@@ -68,7 +68,9 @@ namespace GestionnaireMediatek.bddmanager
                 }
             }
             command.Prepare();
+            Logger.Log($"Executing command: {command.CommandText}");
             command.ExecuteNonQuery();
+            Logger.Log("Command executed successfully.");
         }
 
         /// <summary>

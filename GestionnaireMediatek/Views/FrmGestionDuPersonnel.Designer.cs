@@ -35,17 +35,18 @@
             txtRechercher = new TextBox();
             btnEffacerRecherche = new Button();
             dgvListePersonnel = new DataGridView();
-            colonneNom = new DataGridViewTextBoxColumn();
-            colonnePrenom = new DataGridViewTextBoxColumn();
-            colonneService = new DataGridViewTextBoxColumn();
-            colonneTel = new DataGridViewTextBoxColumn();
-            colonneEmail = new DataGridViewTextBoxColumn();
             dataGridViewImageColumn1 = new DataGridViewImageColumn();
             pbxAjouterPersonnel = new PictureBox();
             dataGridViewImageColumn2 = new DataGridViewImageColumn();
             pbxModifierPersonnel = new PictureBox();
             pbxSupprimerPersonnel = new PictureBox();
             pbxGestionAbsence = new PictureBox();
+            colonneIdPersonnel = new DataGridViewTextBoxColumn();
+            colonneNom = new DataGridViewTextBoxColumn();
+            colonnePrenom = new DataGridViewTextBoxColumn();
+            colonneService = new DataGridViewTextBoxColumn();
+            colonneTel = new DataGridViewTextBoxColumn();
+            colonneEmail = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvListePersonnel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxAjouterPersonnel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxModifierPersonnel).BeginInit();
@@ -73,7 +74,7 @@
             btnEffacerRecherche.Location = new Point(445, 13);
             btnEffacerRecherche.Margin = new Padding(4);
             btnEffacerRecherche.Name = "btnEffacerRecherche";
-            btnEffacerRecherche.Size = new Size(135, 26);
+            btnEffacerRecherche.Size = new Size(150, 26);
             btnEffacerRecherche.TabIndex = 1;
             btnEffacerRecherche.Text = "Effacer la recherche";
             btnEffacerRecherche.UseVisualStyleBackColor = false;
@@ -95,7 +96,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvListePersonnel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvListePersonnel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListePersonnel.Columns.AddRange(new DataGridViewColumn[] { colonneNom, colonnePrenom, colonneService, colonneTel, colonneEmail });
+            dgvListePersonnel.Columns.AddRange(new DataGridViewColumn[] { colonneIdPersonnel, colonneNom, colonnePrenom, colonneService, colonneTel, colonneEmail });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Menu;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -124,41 +125,6 @@
             dgvListePersonnel.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvListePersonnel.Size = new Size(685, 352);
             dgvListePersonnel.TabIndex = 2;
-            // 
-            // colonneNom
-            // 
-            colonneNom.FillWeight = 101.7259F;
-            colonneNom.HeaderText = "Nom";
-            colonneNom.MinimumWidth = 6;
-            colonneNom.Name = "colonneNom";
-            // 
-            // colonnePrenom
-            // 
-            colonnePrenom.FillWeight = 101.7259F;
-            colonnePrenom.HeaderText = "Prenom";
-            colonnePrenom.MinimumWidth = 6;
-            colonnePrenom.Name = "colonnePrenom";
-            // 
-            // colonneService
-            // 
-            colonneService.FillWeight = 101.7259F;
-            colonneService.HeaderText = "Service";
-            colonneService.MinimumWidth = 6;
-            colonneService.Name = "colonneService";
-            // 
-            // colonneTel
-            // 
-            colonneTel.FillWeight = 101.7259F;
-            colonneTel.HeaderText = "Tel";
-            colonneTel.MinimumWidth = 6;
-            colonneTel.Name = "colonneTel";
-            // 
-            // colonneEmail
-            // 
-            colonneEmail.FillWeight = 101.7259F;
-            colonneEmail.HeaderText = "Email";
-            colonneEmail.MinimumWidth = 6;
-            colonneEmail.Name = "colonneEmail";
             // 
             // dataGridViewImageColumn1
             // 
@@ -202,7 +168,6 @@
             pbxModifierPersonnel.SizeMode = PictureBoxSizeMode.Zoom;
             pbxModifierPersonnel.TabIndex = 4;
             pbxModifierPersonnel.TabStop = false;
-            pbxModifierPersonnel.Click += pbxModifierPersonnel_Click;
             // 
             // pbxSupprimerPersonnel
             // 
@@ -225,6 +190,47 @@
             pbxGestionAbsence.SizeMode = PictureBoxSizeMode.Zoom;
             pbxGestionAbsence.TabIndex = 6;
             pbxGestionAbsence.TabStop = false;
+            // 
+            // colonneIdPersonnel
+            // 
+            colonneIdPersonnel.HeaderText = "ID";
+            colonneIdPersonnel.MinimumWidth = 6;
+            colonneIdPersonnel.Name = "colonneIdPersonnel";
+            // 
+            // colonneNom
+            // 
+            colonneNom.FillWeight = 101.7259F;
+            colonneNom.HeaderText = "Nom";
+            colonneNom.MinimumWidth = 6;
+            colonneNom.Name = "colonneNom";
+            // 
+            // colonnePrenom
+            // 
+            colonnePrenom.FillWeight = 101.7259F;
+            colonnePrenom.HeaderText = "Prenom";
+            colonnePrenom.MinimumWidth = 6;
+            colonnePrenom.Name = "colonnePrenom";
+            // 
+            // colonneService
+            // 
+            colonneService.FillWeight = 101.7259F;
+            colonneService.HeaderText = "Service";
+            colonneService.MinimumWidth = 6;
+            colonneService.Name = "colonneService";
+            // 
+            // colonneTel
+            // 
+            colonneTel.FillWeight = 101.7259F;
+            colonneTel.HeaderText = "Tel";
+            colonneTel.MinimumWidth = 6;
+            colonneTel.Name = "colonneTel";
+            // 
+            // colonneEmail
+            // 
+            colonneEmail.FillWeight = 101.7259F;
+            colonneEmail.HeaderText = "Email";
+            colonneEmail.MinimumWidth = 6;
+            colonneEmail.Name = "colonneEmail";
             // 
             // FrmGestionDuPersonnel
             // 
@@ -263,13 +269,14 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.PictureBox pbxAjouterPersonnel;
+        private PictureBox pbxModifierPersonnel;
+        private PictureBox pbxSupprimerPersonnel;
+        private PictureBox pbxGestionAbsence;
+        private DataGridViewTextBoxColumn colonneIdPersonnel;
         private DataGridViewTextBoxColumn colonneNom;
         private DataGridViewTextBoxColumn colonnePrenom;
         private DataGridViewTextBoxColumn colonneService;
         private DataGridViewTextBoxColumn colonneTel;
         private DataGridViewTextBoxColumn colonneEmail;
-        private PictureBox pbxModifierPersonnel;
-        private PictureBox pbxSupprimerPersonnel;
-        private PictureBox pbxGestionAbsence;
     }
 }

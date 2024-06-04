@@ -99,6 +99,20 @@ namespace GestionnaireMediatek.dal
             return personnelList;
         }
 
+        public void AddPersonnel(Personnel personnel)
+        {
+            string query = "INSERT INTO personnel (nom, prenom, tel, mail, idService) VALUES (@nom, @prenom, @tel, @mail, @idService)";
+            var parameters = new Dictionary<string, object>
+        {
+            { "@nom", personnel.Nom },
+            { "@prenom", personnel.Prenom },
+            { "@tel", personnel.Tel },
+            { "@mail", personnel.Mail },
+            { "@idService", personnel.IdService }
+        };
+            Manager.ReqUpdate(query, parameters);
+        }
+
         public void UpdatePersonnel(Personnel personnel)
         {
             string query = "UPDATE personnel SET nom = @Nom, prenom = @Prenom, tel = @Tel, mail = @Mail, idService = @IdService WHERE idPersonnel = @IdPersonnel";
@@ -112,7 +126,27 @@ namespace GestionnaireMediatek.dal
                 { "@IdPersonnel", personnel.IdPersonnel }
             };
 
+            Logger.Log($"Executing query: {query}");
+            foreach (var param in parameters)
+            {
+                Logger.Log($"{param.Key}: {param.Value}");
+            }
+
             Manager.ReqUpdate(query, parameters);
+        }
+        public List<Service> GetServices()
+        {
+            List<Service> services = new List<Service>();
+            string query = "SELECT idservice, nom FROM service";
+            var records = Manager.ReqSelect(query);
+            foreach (var record in records)
+            {
+                services.Add(new Service(
+                    (int)record[0],
+                    (string)record[1]
+                ));
+            }
+            return services;
         }
     }
 }

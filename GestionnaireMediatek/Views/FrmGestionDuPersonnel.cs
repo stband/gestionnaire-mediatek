@@ -22,6 +22,8 @@ namespace GestionnaireMediatek.Views
             this.txtRechercher.Enter += txtRechercher_Enter;
             this.txtRechercher.Leave += txtRechercher_Leave;
             this.btnEffacerRecherche.Click += btnEffacerRecherche_Click;
+            this.pbxAjouterPersonnel.Click += PbxAjouterPersonnel_Click;
+            this.pbxModifierPersonnel.Click += PbxModifierPersonnel_Click;
 
             // Initialisation du texte placeholder
             SetPlaceholder();
@@ -40,12 +42,12 @@ namespace GestionnaireMediatek.Views
             foreach (var personnel in list)
             {
                 dgvListePersonnel.Rows.Add(
+                    personnel.IdPersonnel,
                     personnel.Nom,
                     personnel.Prenom,
-                    personnel.IdService, // Affichez le nom du service si nécessaire
+                    personnel.IdService,
                     personnel.Tel,
                     personnel.Mail
-                // Ajoutez des images ou des icônes pour les actions de modification/suppression si nécessaire
                 );
             }
         }
@@ -89,27 +91,38 @@ namespace GestionnaireMediatek.Views
             txtRechercher.ForeColor = System.Drawing.SystemColors.GrayText;
         }
 
-        private void pbxModifierPersonnel_Click(object sender, EventArgs e)
+        // Ouvre le FrmAjouterModifierPersonnel en mode Ajout
+        private void PbxAjouterPersonnel_Click(object sender, EventArgs e)
         {
-            // Vérifiez si une ligne est sélectionnée dans le DataGridView
+            FrmAjouterModifierPersonnel frm = new FrmAjouterModifierPersonnel();
+            frm.ShowDialog();
+
+            // Refresh le datagrid
+            LoadPersonnelData();
+        }
+
+        // Ouvre le FrmAjouterModifierPersonnel en mode modification
+        private void PbxModifierPersonnel_Click(object sender, EventArgs e)
+        {
             if (dgvListePersonnel.SelectedRows.Count > 0)
             {
-                // Récupérer l'index de la ligne sélectionnée
-                int selectedRowIndex = dgvListePersonnel.SelectedRows[0].Index;
+                DataGridViewRow selectedRow = dgvListePersonnel.SelectedRows[0];
+                Personnel selectedPersonnel = new Personnel
 
-                // Récupérer les données du personnel de la ligne sélectionnée
-                var selectedPersonnel = personnelList[selectedRowIndex];
+                {
+                    IdPersonnel = (int)selectedRow.Cells["colonneIdPersonnel"].Value,
+                    Nom = selectedRow.Cells["colonneNom"].Value.ToString(),
+                    Prenom = selectedRow.Cells["colonnePrenom"].Value.ToString(),
+                    IdService = (int)selectedRow.Cells["colonneService"].Value,
+                    Tel = selectedRow.Cells["colonneTel"].Value.ToString(),
+                    Mail = selectedRow.Cells["colonneEmail"].Value.ToString()
+                };
 
-                // Ouvrir le formulaire de modification en passant les informations du personnel sélectionné
-                FrmAjouterModifierPersonnel frmModifierPersonnel = new FrmAjouterModifierPersonnel(selectedPersonnel);
-                frmModifierPersonnel.ShowDialog();
-
-                // Recharger les données après modification
+                FrmAjouterModifierPersonnel frm = new FrmAjouterModifierPersonnel(selectedPersonnel);
+                frm.ShowDialog();
+                
+                // Refresh le datagrid
                 LoadPersonnelData();
-            }
-            else
-            {
-                MessageBox.Show("Veuillez sélectionner une ligne du tableau pour modifier les informations du personnel.", "Aucune sélection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

@@ -47,5 +47,8 @@
             Mail = mail;
             IdService = idService;
         }
+
+        public Personnel() { }
+
     }
 }

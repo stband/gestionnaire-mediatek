@@ -14,5 +14,13 @@
         /// Libellé du service.
         /// </summary>
         public string Libelle { get; set; }
+
+        public Service(int idService, string libelle)
+        {
+            IdService = idService;
+            Libelle = libelle;
+        }
+
+        public Service() { }
     }
 }
