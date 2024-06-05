@@ -165,5 +165,59 @@ namespace GestionnaireMediatek.dal
 
             Manager.ReqUpdate(query, parameters);
         }
+        public List<Absence> GetAbsences(int idPersonnel)
+        {
+            List<Absence> absences = new List<Absence>();
+            string query = "SELECT idpersonnel, datedebut, datefin, idmotif FROM absence WHERE idpersonnel = @idpersonnel";
+            var parameters = new Dictionary<string, object>
+    {
+        { "@idpersonnel", idPersonnel }
+    };
+            var records = Manager.ReqSelect(query, parameters);
+            foreach (var record in records)
+            {
+                absences.Add(new Absence
+                {
+                    IdPersonnel = (int)record[0],
+                    DateDebut = (DateTime)record[1],
+                    DateFin = record[2] == DBNull.Value ? (DateTime?)null : (DateTime)record[2],
+                    IdMotif = (int)record[3]
+                });
+            }
+            return absences;
+        }
+
+        public List<Motif> GetMotifs()
+        {
+            List<Motif> motifs = new List<Motif>();
+            string query = "SELECT idmotif, libelle FROM motif";
+            var records = Manager.ReqSelect(query);
+            foreach (var record in records)
+            {
+                motifs.Add(new Motif
+                {
+                    IdMotif = (int)record[0],
+                    Libelle = (string)record[1]
+                });
+            }
+            return motifs;
+        }
+
+        public void AddAbsence(Absence absence)
+        {
+            string query = "INSERT INTO absence (idpersonnel, datedebut, datefin, idmotif) VALUES (@idpersonnel, @datedebut, @datefin, @idmotif)";
+            var parameters = new Dictionary<string, object>
+    {
+        { "@idpersonnel", absence.IdPersonnel },
+        { "@datedebut", absence.DateDebut },
+        { "@datefin", absence.DateFin },
+        { "@idmotif", absence.IdMotif }
+    };
+
+            Manager.ReqUpdate(query, parameters);
+        }
+
+
+
     }
 }

@@ -231,6 +231,7 @@
             pbxGestionAbsence.SizeMode = PictureBoxSizeMode.Zoom;
             pbxGestionAbsence.TabIndex = 6;
             pbxGestionAbsence.TabStop = false;
+            pbxGestionAbsence.Click += pbxGestionAbsence_Click;
             // 
             // FrmGestionDuPersonnel
             // 

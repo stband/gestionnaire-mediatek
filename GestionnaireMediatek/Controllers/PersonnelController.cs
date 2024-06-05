@@ -30,5 +30,20 @@ namespace GestionnaireMediatek.Controllers
             Access.GetInstance().DeletePersonnel(idPersonnel);
         }
 
+        public static List<Absence> GetAbsences(int idPersonnel)
+        {
+            return Access.GetInstance().GetAbsences(idPersonnel);
+        }
+
+        public static List<Motif> GetMotifs()
+        {
+            return Access.GetInstance().GetMotifs();
+        }
+
+        public static void AddAbsence(Absence absence)
+        {
+            Access.GetInstance().AddAbsence(absence);
+        }
+
     }
 }

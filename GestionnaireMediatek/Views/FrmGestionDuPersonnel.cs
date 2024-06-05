@@ -32,6 +32,10 @@ namespace GestionnaireMediatek.Views
         private void LoadPersonnelData()
         {
             personnelList = PersonnelController.GetPersonnel();
+            
+            // Trier les personnels par IdPersonnel en ordre croissant
+            personnelList = personnelList.OrderBy(p => p.IdPersonnel).ToList();
+            
             DisplayPersonnelData(personnelList);
         }
 
@@ -147,5 +151,26 @@ namespace GestionnaireMediatek.Views
                 }
             }
         }
+
+        private void pbxGestionAbsence_Click(object sender, EventArgs e)
+        {
+            if (dgvListePersonnel.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvListePersonnel.SelectedRows[0];
+                Personnel selectedPersonnel = new Personnel
+                {
+                    IdPersonnel = (int)selectedRow.Cells["colonneIdPersonnel"].Value,
+                    Nom = selectedRow.Cells["colonneNom"].Value.ToString(),
+                    Prenom = selectedRow.Cells["colonnePrenom"].Value.ToString(),
+                    IdService = (int)selectedRow.Cells["colonneService"].Value,
+                    Tel = selectedRow.Cells["colonneTel"].Value.ToString(),
+                    Mail = selectedRow.Cells["colonneEmail"].Value.ToString()
+                };
+
+                FrmGestionDesAbsences frm = new FrmGestionDesAbsences(selectedPersonnel);
+                frm.ShowDialog();
+            }
+        }
+
     }
 }

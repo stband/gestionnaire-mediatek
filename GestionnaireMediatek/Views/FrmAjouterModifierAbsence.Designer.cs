@@ -28,160 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelCouleur = new System.Windows.Forms.Panel();
-            this.lblInfo = new System.Windows.Forms.Label();
-            this.lblGestionErreur = new System.Windows.Forms.Label();
-            this.btnAnnuler = new System.Windows.Forms.Button();
-            this.btnAjouter = new System.Windows.Forms.Button();
-            this.cbxMotif = new System.Windows.Forms.ComboBox();
-            this.dtpDebut = new System.Windows.Forms.DateTimePicker();
-            this.dtpFin = new System.Windows.Forms.DateTimePicker();
-            this.lblDateDebut = new System.Windows.Forms.Label();
-            this.lblDateFin = new System.Windows.Forms.Label();
-            this.lblMotif = new System.Windows.Forms.Label();
-            this.panelCouleur.SuspendLayout();
-            this.SuspendLayout();
+            panelCouleur = new Panel();
+            lblInfo = new Label();
+            lblGestionErreur = new Label();
+            btnAnnuler = new Button();
+            btnAjouter = new Button();
+            cbxMotif = new ComboBox();
+            dtpDebut = new DateTimePicker();
+            dtpFin = new DateTimePicker();
+            lblDateDebut = new Label();
+            lblDateFin = new Label();
+            lblMotif = new Label();
+            panelCouleur.SuspendLayout();
+            SuspendLayout();
             // 
             // panelCouleur
             // 
-            this.panelCouleur.BackColor = System.Drawing.Color.Tan;
-            this.panelCouleur.Controls.Add(this.lblInfo);
-            this.panelCouleur.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCouleur.Location = new System.Drawing.Point(0, 0);
-            this.panelCouleur.Name = "panelCouleur";
-            this.panelCouleur.Size = new System.Drawing.Size(376, 45);
-            this.panelCouleur.TabIndex = 18;
+            panelCouleur.BackColor = Color.Tan;
+            panelCouleur.Controls.Add(lblInfo);
+            panelCouleur.Dock = DockStyle.Top;
+            panelCouleur.Location = new Point(0, 0);
+            panelCouleur.Name = "panelCouleur";
+            panelCouleur.Size = new Size(376, 45);
+            panelCouleur.TabIndex = 18;
             // 
             // lblInfo
             // 
-            this.lblInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(-4, 8);
-            this.lblInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(377, 28);
-            this.lblInfo.TabIndex = 0;
-            this.lblInfo.Text = "Ajouter une absence";
-            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInfo.Location = new Point(-4, 8);
+            lblInfo.Margin = new Padding(4, 0, 4, 0);
+            lblInfo.Name = "lblInfo";
+            lblInfo.Size = new Size(377, 28);
+            lblInfo.TabIndex = 0;
+            lblInfo.Text = "Ajouter une absence";
+            lblInfo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblGestionErreur
             // 
-            this.lblGestionErreur.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblGestionErreur.BackColor = System.Drawing.Color.Transparent;
-            this.lblGestionErreur.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionErreur.ForeColor = System.Drawing.Color.Red;
-            this.lblGestionErreur.Location = new System.Drawing.Point(0, 216);
-            this.lblGestionErreur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblGestionErreur.Name = "lblGestionErreur";
-            this.lblGestionErreur.Size = new System.Drawing.Size(376, 13);
-            this.lblGestionErreur.TabIndex = 17;
-            this.lblGestionErreur.Text = "lbltext gestion des erreurs";
-            this.lblGestionErreur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblGestionErreur.Anchor = AnchorStyles.None;
+            lblGestionErreur.BackColor = Color.Transparent;
+            lblGestionErreur.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGestionErreur.ForeColor = Color.Red;
+            lblGestionErreur.Location = new Point(0, 209);
+            lblGestionErreur.Margin = new Padding(4, 0, 4, 0);
+            lblGestionErreur.Name = "lblGestionErreur";
+            lblGestionErreur.Size = new Size(376, 13);
+            lblGestionErreur.TabIndex = 17;
+            lblGestionErreur.Text = "lbltext gestion des erreurs";
+            lblGestionErreur.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(190, 175);
-            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(166, 27);
-            this.btnAnnuler.TabIndex = 16;
-            this.btnAnnuler.Text = "Annuler";
-            this.btnAnnuler.UseVisualStyleBackColor = true;
+            btnAnnuler.Location = new Point(190, 175);
+            btnAnnuler.Margin = new Padding(4);
+            btnAnnuler.Name = "btnAnnuler";
+            btnAnnuler.Size = new Size(166, 27);
+            btnAnnuler.TabIndex = 16;
+            btnAnnuler.Text = "Annuler";
+            btnAnnuler.UseVisualStyleBackColor = true;
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(21, 175);
-            this.btnAjouter.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(166, 27);
-            this.btnAjouter.TabIndex = 15;
-            this.btnAjouter.Text = "Ajouter";
-            this.btnAjouter.UseVisualStyleBackColor = true;
+            btnAjouter.Location = new Point(21, 175);
+            btnAjouter.Margin = new Padding(4);
+            btnAjouter.Name = "btnAjouter";
+            btnAjouter.Size = new Size(166, 27);
+            btnAjouter.TabIndex = 15;
+            btnAjouter.Text = "Ajouter";
+            btnAjouter.UseVisualStyleBackColor = true;
             // 
             // cbxMotif
             // 
-            this.cbxMotif.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxMotif.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.cbxMotif.FormattingEnabled = true;
-            this.cbxMotif.Items.AddRange(new object[] {
-            "Congé",
-            "Maladie",
-            "...",
-            "..."});
-            this.cbxMotif.Location = new System.Drawing.Point(126, 129);
-            this.cbxMotif.Margin = new System.Windows.Forms.Padding(4);
-            this.cbxMotif.Name = "cbxMotif";
-            this.cbxMotif.Size = new System.Drawing.Size(230, 25);
-            this.cbxMotif.TabIndex = 14;
-            this.cbxMotif.Text = "Motif";
+            cbxMotif.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxMotif.ForeColor = SystemColors.GrayText;
+            cbxMotif.FormattingEnabled = true;
+            cbxMotif.Items.AddRange(new object[] { "Congé", "Maladie", "...", "..." });
+            cbxMotif.Location = new Point(126, 129);
+            cbxMotif.Margin = new Padding(4);
+            cbxMotif.Name = "cbxMotif";
+            cbxMotif.Size = new Size(230, 25);
+            cbxMotif.TabIndex = 14;
+            cbxMotif.Text = "Motif";
             // 
             // dtpDebut
             // 
-            this.dtpDebut.Location = new System.Drawing.Point(126, 58);
-            this.dtpDebut.Name = "dtpDebut";
-            this.dtpDebut.Size = new System.Drawing.Size(230, 25);
-            this.dtpDebut.TabIndex = 19;
+            dtpDebut.Location = new Point(126, 58);
+            dtpDebut.Name = "dtpDebut";
+            dtpDebut.Size = new Size(230, 25);
+            dtpDebut.TabIndex = 19;
             // 
             // dtpFin
             // 
-            this.dtpFin.Location = new System.Drawing.Point(126, 94);
-            this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(230, 25);
-            this.dtpFin.TabIndex = 20;
+            dtpFin.Location = new Point(126, 94);
+            dtpFin.Name = "dtpFin";
+            dtpFin.Size = new Size(230, 25);
+            dtpFin.TabIndex = 20;
             // 
             // lblDateDebut
             // 
-            this.lblDateDebut.AutoSize = true;
-            this.lblDateDebut.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateDebut.Location = new System.Drawing.Point(18, 61);
-            this.lblDateDebut.Name = "lblDateDebut";
-            this.lblDateDebut.Size = new System.Drawing.Size(102, 17);
-            this.lblDateDebut.TabIndex = 21;
-            this.lblDateDebut.Text = "Date de début :";
+            lblDateDebut.AutoSize = true;
+            lblDateDebut.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDateDebut.Location = new Point(18, 61);
+            lblDateDebut.Name = "lblDateDebut";
+            lblDateDebut.Size = new Size(102, 17);
+            lblDateDebut.TabIndex = 21;
+            lblDateDebut.Text = "Date de début :";
             // 
             // lblDateFin
             // 
-            this.lblDateFin.AutoSize = true;
-            this.lblDateFin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateFin.Location = new System.Drawing.Point(18, 96);
-            this.lblDateFin.Name = "lblDateFin";
-            this.lblDateFin.Size = new System.Drawing.Size(81, 17);
-            this.lblDateFin.TabIndex = 22;
-            this.lblDateFin.Text = "Date de fin :";
+            lblDateFin.AutoSize = true;
+            lblDateFin.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDateFin.Location = new Point(18, 96);
+            lblDateFin.Name = "lblDateFin";
+            lblDateFin.Size = new Size(81, 17);
+            lblDateFin.TabIndex = 22;
+            lblDateFin.Text = "Date de fin :";
             // 
             // lblMotif
             // 
-            this.lblMotif.AutoSize = true;
-            this.lblMotif.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMotif.Location = new System.Drawing.Point(18, 132);
-            this.lblMotif.Name = "lblMotif";
-            this.lblMotif.Size = new System.Drawing.Size(47, 17);
-            this.lblMotif.TabIndex = 23;
-            this.lblMotif.Text = "Motif :";
+            lblMotif.AutoSize = true;
+            lblMotif.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMotif.Location = new Point(18, 132);
+            lblMotif.Name = "lblMotif";
+            lblMotif.Size = new Size(47, 17);
+            lblMotif.TabIndex = 23;
+            lblMotif.Text = "Motif :";
             // 
             // FrmAjouterModifierAbsence
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 243);
-            this.Controls.Add(this.lblMotif);
-            this.Controls.Add(this.lblDateFin);
-            this.Controls.Add(this.lblDateDebut);
-            this.Controls.Add(this.dtpFin);
-            this.Controls.Add(this.dtpDebut);
-            this.Controls.Add(this.panelCouleur);
-            this.Controls.Add(this.lblGestionErreur);
-            this.Controls.Add(this.btnAnnuler);
-            this.Controls.Add(this.btnAjouter);
-            this.Controls.Add(this.cbxMotif);
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmAjouterModifierAbsence";
-            this.Text = "Form1";
-            this.panelCouleur.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(376, 229);
+            Controls.Add(lblMotif);
+            Controls.Add(lblDateFin);
+            Controls.Add(lblDateDebut);
+            Controls.Add(dtpFin);
+            Controls.Add(dtpDebut);
+            Controls.Add(panelCouleur);
+            Controls.Add(lblGestionErreur);
+            Controls.Add(btnAnnuler);
+            Controls.Add(btnAjouter);
+            Controls.Add(cbxMotif);
+            Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
+            Name = "FrmAjouterModifierAbsence";
+            Text = "Form1";
+            panelCouleur.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
