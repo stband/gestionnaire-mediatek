@@ -173,6 +173,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "FrmAjouterModifierAbsence";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             panelCouleur.ResumeLayout(false);
             ResumeLayout(false);

@@ -147,7 +147,7 @@ namespace GestionnaireMediatek.Views
                 FrmConfirmerSuppression frm = new FrmConfirmerSuppression(selectedPersonnel);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    LoadPersonnelData(); // Refresh the data grid view
+                    LoadPersonnelData(); // Refresh le datagrid
                 }
             }
         }

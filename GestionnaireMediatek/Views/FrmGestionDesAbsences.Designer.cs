@@ -167,6 +167,7 @@
             pbxSupprimerAbsence.SizeMode = PictureBoxSizeMode.Zoom;
             pbxSupprimerAbsence.TabIndex = 12;
             pbxSupprimerAbsence.TabStop = false;
+            pbxSupprimerAbsence.Click += pbxSupprimerAbsence_Click;
             // 
             // pbxModifierAbsence
             // 
@@ -178,6 +179,7 @@
             pbxModifierAbsence.SizeMode = PictureBoxSizeMode.Zoom;
             pbxModifierAbsence.TabIndex = 11;
             pbxModifierAbsence.TabStop = false;
+            pbxModifierAbsence.Click += pbxModifierAbsence_Click;
             // 
             // FrmGestionDesAbsences
             // 
@@ -190,6 +192,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(4);
             Name = "FrmGestionDesAbsences";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion des absences";
             ((System.ComponentModel.ISupportInitialize)dgvListeAbsence).EndInit();
             panelCouleur.ResumeLayout(false);

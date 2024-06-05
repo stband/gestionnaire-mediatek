@@ -96,8 +96,8 @@ namespace GestionnaireMediatek.Views
                 }
 
                 // Ouvrir le formulaire de confirmation
-                this.Hide(); // Masquer le formulaire de modification lors de la confirmation
                 FrmConfirmerModification frm = new FrmConfirmerModification();
+
                 if (frm.ShowDialog() == DialogResult.OK) // si l'utilisateur confirme les modifications
                 {
                     // Mettre à jour les informations du personnel avec les nouvelles valeurs

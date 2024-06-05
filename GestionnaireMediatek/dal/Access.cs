@@ -103,13 +103,13 @@ namespace GestionnaireMediatek.dal
         {
             string query = "INSERT INTO personnel (nom, prenom, tel, mail, idService) VALUES (@nom, @prenom, @tel, @mail, @idService)";
             var parameters = new Dictionary<string, object>
-        {
-            { "@nom", personnel.Nom },
-            { "@prenom", personnel.Prenom },
-            { "@tel", personnel.Tel },
-            { "@mail", personnel.Mail },
-            { "@idService", personnel.IdService }
-        };
+            {
+                { "@nom", personnel.Nom },
+                { "@prenom", personnel.Prenom },
+                { "@tel", personnel.Tel },
+                { "@mail", personnel.Mail },
+                { "@idService", personnel.IdService }
+            };
             Manager.ReqUpdate(query, parameters);
         }
 
@@ -153,9 +153,9 @@ namespace GestionnaireMediatek.dal
         {
             string query = "DELETE FROM personnel WHERE idPersonnel = @IdPersonnel";
             var parameters = new Dictionary<string, object>
-    {
-        { "@IdPersonnel", idPersonnel }
-    };
+            {
+                { "@IdPersonnel", idPersonnel }
+            };
 
             Logger.Log($"Executing query: {query}");
             foreach (var param in parameters)
@@ -170,9 +170,9 @@ namespace GestionnaireMediatek.dal
             List<Absence> absences = new List<Absence>();
             string query = "SELECT idpersonnel, datedebut, datefin, idmotif FROM absence WHERE idpersonnel = @idpersonnel";
             var parameters = new Dictionary<string, object>
-    {
-        { "@idpersonnel", idPersonnel }
-    };
+            {
+                { "@idpersonnel", idPersonnel }
+            };
             var records = Manager.ReqSelect(query, parameters);
             foreach (var record in records)
             {
@@ -207,17 +207,53 @@ namespace GestionnaireMediatek.dal
         {
             string query = "INSERT INTO absence (idpersonnel, datedebut, datefin, idmotif) VALUES (@idpersonnel, @datedebut, @datefin, @idmotif)";
             var parameters = new Dictionary<string, object>
-    {
-        { "@idpersonnel", absence.IdPersonnel },
-        { "@datedebut", absence.DateDebut },
-        { "@datefin", absence.DateFin },
-        { "@idmotif", absence.IdMotif }
-    };
+            {
+                { "@idpersonnel", absence.IdPersonnel },
+                { "@datedebut", absence.DateDebut },
+                { "@datefin", absence.DateFin },
+                { "@idmotif", absence.IdMotif }
+            };
 
             Manager.ReqUpdate(query, parameters);
         }
 
+        public void UpdateAbsence(Absence absence, DateTime oldDateDebut)
+        {
+            string query = "UPDATE absence SET datedebut = @datedebut, datefin = @datefin, idmotif = @idmotif WHERE idpersonnel = @idpersonnel AND DATE(datedebut) = DATE(@olddatedebut)";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@datedebut", absence.DateDebut },
+                { "@datefin", absence.DateFin },
+                { "@idmotif", absence.IdMotif },
+                { "@idpersonnel", absence.IdPersonnel },
+                { "@olddatedebut", oldDateDebut.Date }
+            };
 
+            Logger.Log($"Executing query: {query}");
+            foreach (var param in parameters)
+            {
+                Logger.Log($"{param.Key}: {param.Value}");
+            }
 
+            Manager.ReqUpdate(query, parameters);
+        }
+
+        public void DeleteAbsence(Absence absence)
+        {
+            string query = "DELETE FROM absence WHERE idpersonnel = @idpersonnel AND datedebut = @datedebut";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@idpersonnel", absence.IdPersonnel },
+                { "@datedebut", absence.DateDebut }
+            };
+
+            Logger.Log($"Executing query: {query}");
+            foreach (var param in parameters)
+            {
+                Logger.Log($"{param.Key}: {param.Value}");
+            }
+
+            Manager.ReqUpdate(query, parameters);
+        }
     }
 }

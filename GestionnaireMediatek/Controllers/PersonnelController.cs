@@ -45,5 +45,15 @@ namespace GestionnaireMediatek.Controllers
             Access.GetInstance().AddAbsence(absence);
         }
 
+        public static void UpdateAbsence(Absence absence, DateTime oldDateDebut)
+        {
+
+            Access.GetInstance().UpdateAbsence(absence, oldDateDebut);
+        }
+
+        public static void DeleteAbsence(Absence absence)
+        {
+            Access.GetInstance().DeleteAbsence(absence);
+        }
     }
 }

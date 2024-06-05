@@ -19,7 +19,7 @@ namespace GestionnaireMediatek.Views
         {
             InitializeComponent();
             this.personnel = personnel;
-            lblInfoPersonnel.Text = $"{personnel.Nom} {personnel.Prenom} - service {personnel.IdService}"; // Vous pouvez remplacer IdService par le nom du service si nécessaire
+            lblInfoPersonnel.Text = $"{personnel.Nom} {personnel.Prenom} - service {personnel.IdService}";
             btnSupprimer.Click += BtnSupprimer_Click;
             btnAnnuler.Click += BtnAnnuler_Click;
         }
