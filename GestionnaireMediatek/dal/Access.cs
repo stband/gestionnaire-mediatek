@@ -240,11 +240,11 @@ namespace GestionnaireMediatek.dal
 
         public void DeleteAbsence(Absence absence)
         {
-            string query = "DELETE FROM absence WHERE idpersonnel = @idpersonnel AND datedebut = @datedebut";
+            string query = "DELETE FROM absence WHERE idpersonnel = @idpersonnel AND DATE(datedebut) = DATE(@datedebut)";
             var parameters = new Dictionary<string, object>
             {
                 { "@idpersonnel", absence.IdPersonnel },
-                { "@datedebut", absence.DateDebut }
+                { "@datedebut", absence.DateDebut.Date } // Utiliser uniquement la partie date
             };
 
             Logger.Log($"Executing query: {query}");

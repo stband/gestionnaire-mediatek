@@ -26,11 +26,13 @@ namespace GestionnaireMediatek.Views
         private void BtnSupprimer_Click(object sender, EventArgs e)
         {
             PersonnelController.DeleteAbsence(absence);
+            this.DialogResult = DialogResult.OK; // Fermer le formulaire avec un résultat OK
             this.Close();
         }
 
         private void BtnAnnuler_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel; // Fermer le formulaire avec un résultat Cancel
             this.Close();
         }
     }

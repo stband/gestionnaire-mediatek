@@ -72,8 +72,8 @@ namespace GestionnaireMediatek.Views
                 return "Aucune modification n'a été réalisée.";
             }
 
-            // Vérifier les conflits d'absences
-            if (HasConflictingAbsence())
+            // Vérifier les conflits d'absences uniquement en mode ajout
+            if (!isEditMode && HasConflictingAbsence())
             {
                 return "Une absence est déjà programmée dans ce créneau.";
             }
@@ -86,11 +86,6 @@ namespace GestionnaireMediatek.Views
             var absences = PersonnelController.GetAbsences(personnel.IdPersonnel);
             foreach (var abs in absences)
             {
-                if (isEditMode && abs.DateDebut == absence.DateDebut && abs.IdPersonnel == absence.IdPersonnel)
-                {
-                    continue; // Ignorer l'absence en cours de modification
-                }
-
                 if ((dtpDebut.Value >= abs.DateDebut && dtpDebut.Value <= abs.DateFin) ||
                     (dtpFin.Value >= abs.DateDebut && dtpFin.Value <= abs.DateFin) ||
                     (dtpDebut.Value <= abs.DateDebut && dtpFin.Value >= abs.DateFin))
@@ -116,10 +111,10 @@ namespace GestionnaireMediatek.Views
 
             Logger.Log("Validation successful");
 
-            FrmConfirmerModification confirmationForm = new FrmConfirmerModification();
-            if (confirmationForm.ShowDialog() == DialogResult.OK)
+            if (isEditMode)
             {
-                if (isEditMode)
+                FrmConfirmerModification confirmationForm = new FrmConfirmerModification();
+                if (confirmationForm.ShowDialog() == DialogResult.OK)
                 {
                     DateTime oldDateDebut = absence.DateDebut;
                     Logger.Log($"Old DateDebut: {oldDateDebut}");
@@ -130,24 +125,25 @@ namespace GestionnaireMediatek.Views
 
                     Logger.Log($"New DateDebut: {absence.DateDebut}, New DateFin: {absence.DateFin}, New IdMotif: {absence.IdMotif}");
                     PersonnelController.UpdateAbsence(absence, oldDateDebut);
+                    this.Close();
                 }
-                else
+                else if (confirmationForm.DialogResult == DialogResult.Cancel)
                 {
-                    var newAbsence = new Absence
-                    {
-                        IdPersonnel = personnel.IdPersonnel,
-                        DateDebut = dtpDebut.Value,
-                        DateFin = dtpFin.Value,
-                        IdMotif = (int)cbxMotif.SelectedValue
-                    };
-
-                    Logger.Log($"Adding new absence: DateDebut: {newAbsence.DateDebut}, DateFin: {newAbsence.DateFin}, IdMotif: {newAbsence.IdMotif}");
-                    PersonnelController.AddAbsence(newAbsence);
+                    this.Close();
                 }
-                this.Close();
             }
-            else if (confirmationForm.DialogResult == DialogResult.Cancel)
+            else
             {
+                var newAbsence = new Absence
+                {
+                    IdPersonnel = personnel.IdPersonnel,
+                    DateDebut = dtpDebut.Value,
+                    DateFin = dtpFin.Value,
+                    IdMotif = (int)cbxMotif.SelectedValue
+                };
+
+                Logger.Log($"Adding new absence: DateDebut: {newAbsence.DateDebut}, DateFin: {newAbsence.DateFin}, IdMotif: {newAbsence.IdMotif}");
+                PersonnelController.AddAbsence(newAbsence);
                 this.Close();
             }
         }
