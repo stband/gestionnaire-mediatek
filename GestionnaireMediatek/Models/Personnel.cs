@@ -1,7 +1,7 @@
 ﻿namespace GestionnaireMediatek.Models
 {
     /// <summary>
-    /// Représente un membre du personnel.
+    /// Représente un membre du personnel comme dans la table de la bdd.
     /// </summary>
     public class Personnel
     {
@@ -37,6 +37,7 @@
 
         /// <summary>
         /// Constructeur de la classe Personnel.
+        /// Représente toutes les informations d'un personnel dans la bdd.
         /// </summary>
         public Personnel(int idPersonnel, string nom, string prenom, string tel, string mail, int idService)
         {
@@ -48,6 +49,9 @@
             IdService = idService;
         }
 
+        /// <summary>
+        /// Constructeur sans params pour gérer les cas spécifiques.
+        /// </summary>
         public Personnel() { }
 
     }

@@ -4,11 +4,18 @@ using System.Collections.Generic;
 
 namespace GestionnaireMediatek.Views
 {
+    /// <summary>
+    /// Formulaire de gestion des absences pour un personnel spécifique.
+    /// </summary>
     public partial class FrmGestionDesAbsences : Form
     {
         private Personnel personnel;
         private List<Motif> motifs;
 
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe <see cref="FrmGestionDesAbsences"/>.
+        /// </summary>
+        /// <param name="personnel">L'objet <see cref="Personnel"/> représentant le personnel dont les absences sont gérées.</param>
         public FrmGestionDesAbsences(Personnel personnel)
         {
             InitializeComponent();
@@ -18,6 +25,9 @@ namespace GestionnaireMediatek.Views
             LoadAbsenceData();
         }
 
+        /// <summary>
+        /// Charge les données des absences du personnel et les affiche dans le DataGridView.
+        /// </summary>
         private void LoadAbsenceData()
         {
             List<Absence> absences = PersonnelController.GetAbsences(personnel.IdPersonnel);
@@ -38,7 +48,10 @@ namespace GestionnaireMediatek.Views
             }
         }
 
-
+        /// <summary>
+        /// Gestionnaire d'événements pour le clic sur l'image Ajouter Absence.
+        /// Ouvre le formulaire d'ajout/modification d'absence en mode ajout.
+        /// </summary>
         private void pbxAjouterAbsence_Click(object sender, EventArgs e)
         {
             FrmAjouterModifierAbsence frm = new FrmAjouterModifierAbsence(personnel);
@@ -48,6 +61,10 @@ namespace GestionnaireMediatek.Views
             LoadAbsenceData();
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour le clic sur l'image Modifier Absence.
+        /// Ouvre le formulaire d'ajout/modification d'absence en mode modification.
+        /// </summary>
         private void pbxModifierAbsence_Click(object sender, EventArgs e)
         {
             if (dgvListeAbsence.SelectedRows.Count > 0)
@@ -84,13 +101,21 @@ namespace GestionnaireMediatek.Views
             }
         }
 
-
+        /// <summary>
+        /// Récupère l'identifiant du motif à partir de son libellé.
+        /// </summary>
+        /// <param name="libelle">Le libellé du motif.</param>
+        /// <returns>L'identifiant du motif, ou -1 si le motif n'est pas trouvé.</returns>
         private int GetMotifIdFromLibelle(string libelle)
         {
             var motif = motifs.FirstOrDefault(m => m.Libelle == libelle);
-            return motif != null ? motif.IdMotif : -1; // Renvoie -1 si le motif n'est pas trouvé
+            return motif != null ? motif.IdMotif : -1;
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour le clic sur l'image Supprimer Absence.
+        /// Ouvre le formulaire de confirmation de suppression d'absence.
+        /// </summary>
         private void pbxSupprimerAbsence_Click(object sender, EventArgs e)
         {
             if (dgvListeAbsence.SelectedRows.Count > 0)
@@ -116,7 +141,7 @@ namespace GestionnaireMediatek.Views
                     FrmConfirmerSuppressionAbsence frm = new FrmConfirmerSuppressionAbsence(selectedAbsence);
                     frm.ShowDialog();
 
-                    // Refresh le datagrid après la suppression
+                    // Refresh le datagrid
                     LoadAbsenceData();
                 }
                 catch (Exception ex)
@@ -127,3 +152,4 @@ namespace GestionnaireMediatek.Views
         }
     }
 }
+

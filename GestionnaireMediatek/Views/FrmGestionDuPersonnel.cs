@@ -7,17 +7,22 @@ using GestionnaireMediatek.Models;
 
 namespace GestionnaireMediatek.Views
 {
+    /// <summary>
+    /// Formulaire de gestion du personnel.
+    /// </summary>
     public partial class FrmGestionDuPersonnel : Form
     {
         private List<Personnel> personnelList;
         private const string placeholderText = "Rechercher";
 
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe <see cref="FrmGestionDuPersonnel"/>.
+        /// </summary>
         public FrmGestionDuPersonnel()
         {
             InitializeComponent();
             LoadPersonnelData();
 
-            // Ajout des gestionnaires d'événements
             this.txtRechercher.TextChanged += txtRechercher_TextChanged;
             this.txtRechercher.Enter += txtRechercher_Enter;
             this.txtRechercher.Leave += txtRechercher_Leave;
@@ -25,20 +30,26 @@ namespace GestionnaireMediatek.Views
             this.pbxAjouterPersonnel.Click += PbxAjouterPersonnel_Click;
             this.pbxModifierPersonnel.Click += PbxModifierPersonnel_Click;
 
-            // Initialisation du texte placeholder
             SetPlaceholder();
         }
 
+        /// <summary>
+        /// Charge les données du personnel depuis le contrôleur et les affiche dans le DataGridView.
+        /// </summary>
         private void LoadPersonnelData()
         {
             personnelList = PersonnelController.GetPersonnel();
             
-            // Trier les personnels par IdPersonnel en ordre croissant
+            // Trier les personnels par IdPersonnel en ordre croissant.
             personnelList = personnelList.OrderBy(p => p.IdPersonnel).ToList();
             
             DisplayPersonnelData(personnelList);
         }
 
+        /// <summary>
+        /// Affiche les données du personnel dans le DataGridView.
+        /// </summary>
+        /// <param name="list">Liste du personnel à afficher.</param>
         private void DisplayPersonnelData(List<Personnel> list)
         {
             dgvListePersonnel.Rows.Clear();
@@ -56,6 +67,10 @@ namespace GestionnaireMediatek.Views
             }
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour la modification du texte de recherche.
+        /// Filtre les résultats affichés en fonction du terme recherché.
+        /// </summary>
         private void txtRechercher_TextChanged(object sender, EventArgs e)
         {
             string searchTerm = txtRechercher.Text.ToLower();
@@ -65,6 +80,10 @@ namespace GestionnaireMediatek.Views
             DisplayPersonnelData(filteredList);
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour le clic sur le bouton Effacer Recherche.
+        /// Réinitialise le champ de recherche et affiche toutes les données du personnel.
+        /// </summary>
         private void btnEffacerRecherche_Click(object sender, EventArgs e)
         {
             txtRechercher.Text = string.Empty;
@@ -72,6 +91,10 @@ namespace GestionnaireMediatek.Views
             DisplayPersonnelData(personnelList);
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour l'entrée dans le champ de recherche.
+        /// Supprime le placeholder lorsque l'utilisateur clique dans le champ de recherche.
+        /// </summary>
         private void txtRechercher_Enter(object sender, EventArgs e)
         {
             if (txtRechercher.Text == placeholderText)
@@ -81,6 +104,10 @@ namespace GestionnaireMediatek.Views
             }
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour la sortie du champ de recherche.
+        /// Réinitialise le placeholder lorsque le champ de recherche est vide.
+        /// </summary>
         private void txtRechercher_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtRechercher.Text))
@@ -89,13 +116,18 @@ namespace GestionnaireMediatek.Views
             }
         }
 
+        /// <summary>
+        /// Initialise le texte placeholder dans le champ de recherche.
+        /// </summary>
         private void SetPlaceholder()
         {
             txtRechercher.Text = placeholderText;
             txtRechercher.ForeColor = System.Drawing.SystemColors.GrayText;
         }
 
-        // Ouvre le FrmAjouterModifierPersonnel en mode Ajout
+        /// <summary>
+        /// Ouvre le formulaire FrmAjouterModifierPersonnel en mode ajout.
+        /// </summary>
         private void PbxAjouterPersonnel_Click(object sender, EventArgs e)
         {
             FrmAjouterModifierPersonnel frm = new FrmAjouterModifierPersonnel();
@@ -105,7 +137,9 @@ namespace GestionnaireMediatek.Views
             LoadPersonnelData();
         }
 
-        // Ouvre le FrmAjouterModifierPersonnel en mode modification
+        /// <summary>
+        /// Ouvre le formulaire FrmAjouterModifierPersonnel en mode modification.
+        /// </summary>
         private void PbxModifierPersonnel_Click(object sender, EventArgs e)
         {
             if (dgvListePersonnel.SelectedRows.Count > 0)
@@ -125,10 +159,13 @@ namespace GestionnaireMediatek.Views
                 FrmAjouterModifierPersonnel frm = new FrmAjouterModifierPersonnel(selectedPersonnel);
                 frm.ShowDialog();
 
-                // Refresh le datagrid
                 LoadPersonnelData();
             }
         }
+
+        /// <summary>
+        /// Ouvre le formulaire de confirmation de suppression de personnel.
+        /// </summary>
         private void pbxSupprimerPersonnel_Click(object sender, EventArgs e)
         {
             if (dgvListePersonnel.SelectedRows.Count > 0)
@@ -147,11 +184,14 @@ namespace GestionnaireMediatek.Views
                 FrmConfirmerSuppression frm = new FrmConfirmerSuppression(selectedPersonnel);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    LoadPersonnelData(); // Refresh le datagrid
+                    LoadPersonnelData();
                 }
             }
         }
 
+        /// <summary>
+        /// Ouvre le formulaire de gestion des absences pour le personnel sélectionné.
+        /// </summary>
         private void pbxGestionAbsence_Click(object sender, EventArgs e)
         {
             if (dgvListePersonnel.SelectedRows.Count > 0)
@@ -171,6 +211,5 @@ namespace GestionnaireMediatek.Views
                 frm.ShowDialog();
             }
         }
-
     }
 }

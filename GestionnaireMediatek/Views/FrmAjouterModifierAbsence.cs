@@ -3,12 +3,21 @@ using GestionnaireMediatek.Models;
 
 namespace GestionnaireMediatek.Views
 {
+    /// <summary>
+    /// Formulaire pour ajouter ou modifier une absence.
+    /// Important : ce formulaire est utilisé pour gérer les parties ajout et modification d'une absence.
+    /// En fonction de son "mode", certains comportements et visuels changent.
+    /// </summary>
     public partial class FrmAjouterModifierAbsence : Form
     {
         private readonly Personnel personnel;
         private readonly Absence absence;
         private readonly bool isEditMode;
 
+        /// <summary>
+        /// Initialise une nouvelle instance de <see cref="FrmAjouterModifierAbsence"/> en mode ajout.
+        /// </summary>
+        /// <param name="personnel">Le personnel pour lequel l'absence est ajoutée.</param>
         public FrmAjouterModifierAbsence(Personnel personnel)
         {
             InitializeComponent();
@@ -17,6 +26,11 @@ namespace GestionnaireMediatek.Views
             SetupForm();
         }
 
+        /// <summary>
+        /// Initialise une nouvelle instance de <see cref="FrmAjouterModifierAbsence"/> en mode modification.
+        /// </summary>
+        /// <param name="personnel">Le personnel pour lequel l'absence est modifiée.</param>
+        /// <param name="absence">L'absence à modifier.</param>
         public FrmAjouterModifierAbsence(Personnel personnel, Absence absence)
         {
             InitializeComponent();
@@ -27,6 +41,9 @@ namespace GestionnaireMediatek.Views
             LoadAbsenceData();
         }
 
+        /// <summary>
+        /// Configure le formulaire en fonction du mode (ajout ou modification).
+        /// </summary>
         private void SetupForm()
         {
             lblInfo.Text = isEditMode ? "Modifier une absence" : "Ajouter une absence";
@@ -37,6 +54,9 @@ namespace GestionnaireMediatek.Views
             lblGestionErreur.Visible = false; // Masquer le label d'erreur par défaut
         }
 
+        /// <summary>
+        /// Charge les données de l'absence dans les champs du formulaire en mode modification.
+        /// </summary>
         private void LoadAbsenceData()
         {
             if (absence != null)
@@ -47,6 +67,9 @@ namespace GestionnaireMediatek.Views
             }
         }
 
+        /// <summary>
+        /// Charge les motifs d'absence dans la liste déroulante.
+        /// </summary>
         private void LoadMotifs()
         {
             var motifs = PersonnelController.GetMotifs();
@@ -55,6 +78,10 @@ namespace GestionnaireMediatek.Views
             cbxMotif.ValueMember = "IdMotif";
         }
 
+        /// <summary>
+        /// Valide les champs du formulaire.
+        /// </summary>
+        /// <returns>Un message d'erreur si la validation échoue, sinon null.</returns>
         private string ValidateFields()
         {
             if (dtpDebut.Value == null || dtpFin.Value == null || cbxMotif.SelectedValue == null)
@@ -81,6 +108,10 @@ namespace GestionnaireMediatek.Views
             return null;
         }
 
+        /// <summary>
+        /// Vérifie s'il existe une absence en conflit avec les dates saisies.
+        /// </summary>
+        /// <returns>True s'il existe une absence en conflit, sinon false.</returns>
         private bool HasConflictingAbsence()
         {
             var absences = PersonnelController.GetAbsences(personnel.IdPersonnel);
@@ -96,20 +127,18 @@ namespace GestionnaireMediatek.Views
             return false;
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour le clic sur le bouton Ajouter/Enregistrer.
+        /// </summary>
         private void BtnAjouter_Click(object sender, EventArgs e)
         {
-            Logger.Log("BtnAjouter_Click invoked");
-
             string validationError = ValidateFields();
             if (validationError != null)
             {
-                Logger.Log("Validation failed: " + validationError);
                 lblGestionErreur.Text = validationError;
                 lblGestionErreur.Visible = true;
                 return;
             }
-
-            Logger.Log("Validation successful");
 
             if (isEditMode)
             {
@@ -117,13 +146,11 @@ namespace GestionnaireMediatek.Views
                 if (confirmationForm.ShowDialog() == DialogResult.OK)
                 {
                     DateTime oldDateDebut = absence.DateDebut;
-                    Logger.Log($"Old DateDebut: {oldDateDebut}");
 
                     absence.DateDebut = dtpDebut.Value;
                     absence.DateFin = dtpFin.Value;
                     absence.IdMotif = (int)cbxMotif.SelectedValue;
 
-                    Logger.Log($"New DateDebut: {absence.DateDebut}, New DateFin: {absence.DateFin}, New IdMotif: {absence.IdMotif}");
                     PersonnelController.UpdateAbsence(absence, oldDateDebut);
                     this.Close();
                 }
@@ -142,12 +169,15 @@ namespace GestionnaireMediatek.Views
                     IdMotif = (int)cbxMotif.SelectedValue
                 };
 
-                Logger.Log($"Adding new absence: DateDebut: {newAbsence.DateDebut}, DateFin: {newAbsence.DateFin}, IdMotif: {newAbsence.IdMotif}");
                 PersonnelController.AddAbsence(newAbsence);
                 this.Close();
             }
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour le clic sur le bouton Annuler.
+        /// Fonctionne de la même manière en mode ajout ou modification.
+        /// </summary>
         private void BtnAnnuler_Click(object sender, EventArgs e)
         {
             this.Close();

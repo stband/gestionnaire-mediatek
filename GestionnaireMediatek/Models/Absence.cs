@@ -1,7 +1,8 @@
 ﻿namespace GestionnaireMediatek.Models
 {
     /// <summary>
-    /// Classe métier liée à la table Absence. Représente les caractéritiques d'une absence.
+    /// Classe métier liée à la table Absence de la bdd.
+    /// Représente les caractéritiques d'une absence.
     /// </summary>
     public class Absence
     {

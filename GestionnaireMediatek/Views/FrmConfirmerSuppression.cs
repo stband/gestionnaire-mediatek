@@ -11,10 +11,17 @@ using System.Windows.Forms;
 
 namespace GestionnaireMediatek.Views
 {
+    /// <summary>
+    /// Formulaire de confirmation pour la suppression d'un personnel.
+    /// </summary>
     public partial class FrmConfirmerSuppression : Form
     {
         private readonly Personnel personnel;
 
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe <see cref="FrmConfirmerSuppression"/>.
+        /// </summary>
+        /// <param name="personnel">L'objet <see cref="Personnel"/> représentant le personnel à supprimer.</param>
         public FrmConfirmerSuppression(Personnel personnel)
         {
             InitializeComponent();
@@ -24,6 +31,9 @@ namespace GestionnaireMediatek.Views
             btnAnnuler.Click += BtnAnnuler_Click;
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour le clic sur le bouton Supprimer.
+        /// </summary>
         private void BtnSupprimer_Click(object sender, EventArgs e)
         {
             PersonnelController.DeletePersonnel(personnel.IdPersonnel);
@@ -31,6 +41,9 @@ namespace GestionnaireMediatek.Views
             this.Close();
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour le clic sur le bouton Annuler.
+        /// </summary>
         private void BtnAnnuler_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

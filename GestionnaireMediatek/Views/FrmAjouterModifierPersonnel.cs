@@ -3,30 +3,39 @@ using GestionnaireMediatek.Models;
 
 namespace GestionnaireMediatek.Views
 {
+    /// <summary>
+    /// Formulaire pour ajouter ou modifier un personnel.
+    /// Ce formulaire à plusieur "mode", ajout et modification.
+    /// Les comportements et visuels des méthodes changent en fonction du "mode".
+    /// </summary>
     public partial class FrmAjouterModifierPersonnel : Form
     {
         private Personnel personnel;
         private bool isEditMode;
 
-        // Constructeur pour le mode ajout
+        /// <summary>
+        /// Constructeur pour le mode ajout.
+        /// </summary>
         public FrmAjouterModifierPersonnel()
         {
             InitializeComponent();
             isEditMode = false;
             SetupForm();
             
-            // Ajouter les gestionnaires d'événements pour chaque TextBox seulement pour le constructeur du mode ajout
+            // Ajouter les gestionnaires d'événements pour chaque TextBox seulement pour le constructeur du mode ajout.
             AddPlaceholderEvents();
 
-            // Ajout des gestionnaires d'événements
             btnAjouter.Click += btnAjouter_Click;
             btnAnnuler.Click += btnAnnuler_Click;
 
-            // Masquer le label d'erreur au démarrage
+            // Masquer le label d'erreur au démarrage.
             lblGestionErreur.Visible = false;
         }
 
-        // Constructeur pour le mode modification
+        /// <summary>
+        /// Constructeur pour le mode modification.
+        /// </summary>
+        /// <param name="personnel">Le personnel à modifier.</param>
         public FrmAjouterModifierPersonnel(Personnel personnel)
         {
             InitializeComponent();
@@ -35,15 +44,17 @@ namespace GestionnaireMediatek.Views
             SetupForm();
             LoadPersonnelData();
 
-            // Ajout des gestionnaires d'événements
+            // Ajout des gestionnaires d'événements.
             btnAjouter.Click += btnAjouter_Click;
             btnAnnuler.Click += btnAnnuler_Click;
 
-            // Masquer le label d'erreur au démarrage
+            // Masquer le label d'erreur au démarrage.
             lblGestionErreur.Visible = false;
         }
 
-        // Setup visuel du form qui change en fonction du mode ajout ou modification
+        /// <summary>
+        /// Configure le formulaire en fonction du mode (ajout ou modification).
+        /// </summary>
         private void SetupForm()
         {
             if (isEditMode)
@@ -63,11 +74,14 @@ namespace GestionnaireMediatek.Views
             cbxServiceAffectation.ValueMember = "IdService";
         }
 
+        /// <summary>
+        /// Charge les données du personnel dans les champs du formulaire en mode modification.
+        /// </summary>
         private void LoadPersonnelData()
         {
             if (personnel != null)
             {
-                // Charger les données du personnel dans le formulaire de modification
+                // Charger les données du personnel dans le formulaire de modification.
                 txtNom.Text = personnel.Nom;
                 txtPrenom.Text = personnel.Prenom;
                 cbxServiceAffectation.SelectedValue = personnel.IdService;
@@ -76,6 +90,9 @@ namespace GestionnaireMediatek.Views
             }
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour le clic sur le bouton Ajouter/Enregistrer.
+        /// </summary>
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             if (!ValidateFields())
@@ -95,28 +112,27 @@ namespace GestionnaireMediatek.Views
                     return;
                 }
 
-                // Ouvrir le formulaire de confirmation
+                // Ouvrir le formulaire de confirmation.
                 FrmConfirmerModification frm = new FrmConfirmerModification();
 
-                if (frm.ShowDialog() == DialogResult.OK) // si l'utilisateur confirme les modifications
+                // Si l'utilisateur confirme les modifications.
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    // Mettre à jour les informations du personnel avec les nouvelles valeurs
+                    // Mettre à jour les informations du personnel avec les nouvelles valeurs.
                     personnel.Nom = txtNom.Text;
                     personnel.Prenom = txtPrenom.Text;
                     personnel.IdService = selectedServiceId;
                     personnel.Tel = txtTel.Text;
                     personnel.Mail = txtMail.Text;
 
-                    Logger.Log($"Updating personnel: Nom={personnel.Nom}, Prenom={personnel.Prenom}, IdService={personnel.IdService}, Tel={personnel.Tel}, Mail={personnel.Mail}");
-
-                    // Sauvegarder les modifications
+                    // Sauvegarder les modifications.
                     PersonnelController.UpdatePersonnel(personnel);
                 }
 
             }
             else
             {
-                // Ajouter un nouveau personnel
+                // Ajouter un nouveau personnel.
                 Personnel newPersonnel = new Personnel
                 {
                     Nom = txtNom.Text == "Nom" ? string.Empty : txtNom.Text,
@@ -129,10 +145,14 @@ namespace GestionnaireMediatek.Views
                 PersonnelController.AddPersonnel(newPersonnel);
             }
 
-            // Fermer le formulaire
+            // Fermer le formulaire.
             this.Close();
         }
 
+        /// <summary>
+        /// Valide les champs du formulaire.
+        /// </summary>
+        /// <returns>True si tous les champs sont valides, sinon False.</returns>
         private bool ValidateFields()
         {
             bool isValid = true;
@@ -144,17 +164,21 @@ namespace GestionnaireMediatek.Views
             {
                 lblGestionErreur.Text = "Tous les champs doivent être remplis.";
                 lblGestionErreur.ForeColor = Color.Red;
-                lblGestionErreur.Visible = true; // Afficher le label d'erreur
+                lblGestionErreur.Visible = true;
                 isValid = false;
             }
             else
             {
-                lblGestionErreur.Visible = false; // Masquer le label d'erreur
+                lblGestionErreur.Visible = false;
             }
 
             return isValid;
         }
 
+        /// <summary>
+        /// Vérifie si des modifications ont été apportées aux champs du formulaire en mode modification.
+        /// </summary>
+        /// <returns>True si des modifications ont été apportées, sinon False.</returns>
         private bool HasModifications()
         {
             int selectedServiceId = (int)cbxServiceAffectation.SelectedValue;
@@ -165,11 +189,17 @@ namespace GestionnaireMediatek.Views
                    personnel.Mail != txtMail.Text;
         }
 
+        /// <summary>
+        /// Gestionnaire d'événements pour le clic sur le bouton Annuler.
+        /// </summary>
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Ajoute les gestionnaires d'événements pour les placeholders des TextBox en mode ajout.
+        /// </summary>
         private void AddPlaceholderEvents()
         {
             if (!isEditMode)
@@ -181,6 +211,11 @@ namespace GestionnaireMediatek.Views
             }
         }
 
+        /// <summary>
+        /// Ajoute les gestionnaires d'événements pour un placeholder spécifique d'une TextBox.
+        /// </summary>
+        /// <param name="textBox">La TextBox à laquelle ajouter les événements.</param>
+        /// <param name="placeholderText">Le texte du placeholder.</param>
         private void AddPlaceholderEvent(TextBox textBox, string placeholderText)
         {
             textBox.Text = placeholderText;
@@ -204,3 +239,4 @@ namespace GestionnaireMediatek.Views
         }
     }
 }
+

@@ -7,6 +7,7 @@ namespace GestionnaireMediatek.dal
 {
     /// <summary>
     /// Singleton : gestionnaire d'accès à la base de données
+    /// Toutes les méthodes de cette classe permettent de préparer l'intéraction avec la base de données.
     /// </summary>
     public class Access
     {
@@ -14,10 +15,12 @@ namespace GestionnaireMediatek.dal
         /// Nom de la chaîne de connexion dans le fichier de configuration
         /// </summary>
         private static readonly string connectionName = "GestionnaireMediatek.Properties.Settings.mediatekConnectionString";
+        
         /// <summary>
         /// Instance unique de la classe Access
         /// </summary>
         private static Access instance = null;
+        
         /// <summary>
         /// Gestionnaire de base de données
         /// </summary>
@@ -68,6 +71,10 @@ namespace GestionnaireMediatek.dal
             return returnValue;
         }
 
+        /// <summary>
+        /// Récupère la liste des responsables.
+        /// </summary>
+        /// <returns>Liste des responsables.</returns>
         public List<Responsable> GetResponsables()
         {
             List<Responsable> responsables = new List<Responsable>();
@@ -80,6 +87,10 @@ namespace GestionnaireMediatek.dal
             return responsables;
         }
 
+        /// <summary>
+        /// Récupère la liste du personnel.
+        /// </summary>
+        /// <returns>Liste du personnel.</returns>
         public List<Personnel> GetPersonnel()
         {
             List<Personnel> personnelList = new List<Personnel>();
@@ -99,6 +110,10 @@ namespace GestionnaireMediatek.dal
             return personnelList;
         }
 
+        /// <summary>
+        /// Ajoute un nouveau membre du personnel.
+        /// </summary>
+        /// <param name="personnel">Objet Personnel à ajouter.</param>
         public void AddPersonnel(Personnel personnel)
         {
             string query = "INSERT INTO personnel (nom, prenom, tel, mail, idService) VALUES (@nom, @prenom, @tel, @mail, @idService)";
@@ -113,6 +128,10 @@ namespace GestionnaireMediatek.dal
             Manager.ReqUpdate(query, parameters);
         }
 
+        /// <summary>
+        /// Met à jour les informations d'un membre du personnel.
+        /// </summary>
+        /// <param name="personnel">Objet Personnel à mettre à jour.</param>
         public void UpdatePersonnel(Personnel personnel)
         {
             string query = "UPDATE personnel SET nom = @Nom, prenom = @Prenom, tel = @Tel, mail = @Mail, idService = @IdService WHERE idPersonnel = @IdPersonnel";
@@ -126,14 +145,13 @@ namespace GestionnaireMediatek.dal
                 { "@IdPersonnel", personnel.IdPersonnel }
             };
 
-            Logger.Log($"Executing query: {query}");
-            foreach (var param in parameters)
-            {
-                Logger.Log($"{param.Key}: {param.Value}");
-            }
-
             Manager.ReqUpdate(query, parameters);
         }
+
+        /// <summary>
+        /// Récupère la liste des services.
+        /// </summary>
+        /// <returns>Liste des services.</returns>
         public List<Service> GetServices()
         {
             List<Service> services = new List<Service>();
@@ -149,6 +167,10 @@ namespace GestionnaireMediatek.dal
             return services;
         }
 
+        /// <summary>
+        /// Supprime un membre du personnel.
+        /// </summary>
+        /// <param name="idPersonnel">Identifiant du personnel à supprimer.</param>
         public void DeletePersonnel(int idPersonnel)
         {
             string query = "DELETE FROM personnel WHERE idPersonnel = @IdPersonnel";
@@ -157,14 +179,14 @@ namespace GestionnaireMediatek.dal
                 { "@IdPersonnel", idPersonnel }
             };
 
-            Logger.Log($"Executing query: {query}");
-            foreach (var param in parameters)
-            {
-                Logger.Log($"{param.Key}: {param.Value}");
-            }
-
             Manager.ReqUpdate(query, parameters);
         }
+
+        /// <summary>
+        /// Récupère la liste des absences d'un personnel.
+        /// </summary>
+        /// <param name="idPersonnel">Identifiant du personnel.</param>
+        /// <returns>Liste des absences.</returns>
         public List<Absence> GetAbsences(int idPersonnel)
         {
             List<Absence> absences = new List<Absence>();
@@ -187,6 +209,10 @@ namespace GestionnaireMediatek.dal
             return absences;
         }
 
+        /// <summary>
+        /// Récupère la liste des motifs d'absence.
+        /// </summary>
+        /// <returns>Liste des motifs.</returns>
         public List<Motif> GetMotifs()
         {
             List<Motif> motifs = new List<Motif>();
@@ -203,6 +229,10 @@ namespace GestionnaireMediatek.dal
             return motifs;
         }
 
+        /// <summary>
+        /// Ajoute une nouvelle absence.
+        /// </summary>
+        /// <param name="absence">Objet Absence à ajouter.</param>
         public void AddAbsence(Absence absence)
         {
             string query = "INSERT INTO absence (idpersonnel, datedebut, datefin, idmotif) VALUES (@idpersonnel, @datedebut, @datefin, @idmotif)";
@@ -217,6 +247,11 @@ namespace GestionnaireMediatek.dal
             Manager.ReqUpdate(query, parameters);
         }
 
+        /// <summary>
+        /// Met à jour une absence existante.
+        /// </summary>
+        /// <param name="absence">Objet Absence à mettre à jour.</param>
+        /// <param name="oldDateDebut">Ancienne date de début de l'absence.</param>
         public void UpdateAbsence(Absence absence, DateTime oldDateDebut)
         {
             string query = "UPDATE absence SET datedebut = @datedebut, datefin = @datefin, idmotif = @idmotif WHERE idpersonnel = @idpersonnel AND DATE(datedebut) = DATE(@olddatedebut)";
@@ -229,29 +264,21 @@ namespace GestionnaireMediatek.dal
                 { "@olddatedebut", oldDateDebut.Date }
             };
 
-            Logger.Log($"Executing query: {query}");
-            foreach (var param in parameters)
-            {
-                Logger.Log($"{param.Key}: {param.Value}");
-            }
-
             Manager.ReqUpdate(query, parameters);
         }
 
+        /// <summary>
+        /// Supprime une absence.
+        /// </summary>
+        /// <param name="absence">Objet Absence à supprimer.</param>
         public void DeleteAbsence(Absence absence)
         {
             string query = "DELETE FROM absence WHERE idpersonnel = @idpersonnel AND DATE(datedebut) = DATE(@datedebut)";
             var parameters = new Dictionary<string, object>
             {
                 { "@idpersonnel", absence.IdPersonnel },
-                { "@datedebut", absence.DateDebut.Date } // Utiliser uniquement la partie date
+                { "@datedebut", absence.DateDebut.Date }
             };
-
-            Logger.Log($"Executing query: {query}");
-            foreach (var param in parameters)
-            {
-                Logger.Log($"{param.Key}: {param.Value}");
-            }
 
             Manager.ReqUpdate(query, parameters);
         }

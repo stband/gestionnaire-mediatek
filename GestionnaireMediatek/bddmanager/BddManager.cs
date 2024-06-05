@@ -68,13 +68,7 @@ namespace GestionnaireMediatek.bddmanager
                 }
             }
             command.Prepare();
-            Logger.Log($"Executing command: {command.CommandText}");
-            foreach (MySqlParameter param in command.Parameters)
-            {
-                Logger.Log($"{param.ParameterName}: {param.Value}");
-            }
-            int rowsAffected = command.ExecuteNonQuery();
-            Logger.Log($"Command executed successfully. Rows affected: {rowsAffected}");
+            command.ExecuteNonQuery();
         }
 
         /// <summary>
