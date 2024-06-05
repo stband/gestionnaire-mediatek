@@ -95,17 +95,24 @@ namespace GestionnaireMediatek.Views
                     return;
                 }
 
-                // Mettre à jour les informations du personnel avec les nouvelles valeurs
-                personnel.Nom = txtNom.Text;
-                personnel.Prenom = txtPrenom.Text;
-                personnel.IdService = selectedServiceId;
-                personnel.Tel = txtTel.Text;
-                personnel.Mail = txtMail.Text;
+                // Ouvrir le formulaire de confirmation
+                this.Hide(); // Masquer le formulaire de modification lors de la confirmation
+                FrmConfirmerModification frm = new FrmConfirmerModification();
+                if (frm.ShowDialog() == DialogResult.OK) // si l'utilisateur confirme les modifications
+                {
+                    // Mettre à jour les informations du personnel avec les nouvelles valeurs
+                    personnel.Nom = txtNom.Text;
+                    personnel.Prenom = txtPrenom.Text;
+                    personnel.IdService = selectedServiceId;
+                    personnel.Tel = txtTel.Text;
+                    personnel.Mail = txtMail.Text;
 
-                Logger.Log($"Updating personnel: Nom={personnel.Nom}, Prenom={personnel.Prenom}, IdService={personnel.IdService}, Tel={personnel.Tel}, Mail={personnel.Mail}");
+                    Logger.Log($"Updating personnel: Nom={personnel.Nom}, Prenom={personnel.Prenom}, IdService={personnel.IdService}, Tel={personnel.Tel}, Mail={personnel.Mail}");
 
-                // Sauvegarder les modifications
-                PersonnelController.UpdatePersonnel(personnel);
+                    // Sauvegarder les modifications
+                    PersonnelController.UpdatePersonnel(personnel);
+                }
+
             }
             else
             {

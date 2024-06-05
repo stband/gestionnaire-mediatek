@@ -24,5 +24,11 @@ namespace GestionnaireMediatek.Controllers
         {
             return Access.GetInstance().GetServices();
         }
+
+        public static void DeletePersonnel(int idPersonnel)
+        {
+            Access.GetInstance().DeletePersonnel(idPersonnel);
+        }
+
     }
 }

@@ -148,5 +148,22 @@ namespace GestionnaireMediatek.dal
             }
             return services;
         }
+
+        public void DeletePersonnel(int idPersonnel)
+        {
+            string query = "DELETE FROM personnel WHERE idPersonnel = @IdPersonnel";
+            var parameters = new Dictionary<string, object>
+    {
+        { "@IdPersonnel", idPersonnel }
+    };
+
+            Logger.Log($"Executing query: {query}");
+            foreach (var param in parameters)
+            {
+                Logger.Log($"{param.Key}: {param.Value}");
+            }
+
+            Manager.ReqUpdate(query, parameters);
+        }
     }
 }

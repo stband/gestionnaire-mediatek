@@ -106,6 +106,7 @@
             Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             Name = "FrmAuthentification";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Authentification";
             ((System.ComponentModel.ISupportInitialize)pbxLogo).EndInit();
             ResumeLayout(false);

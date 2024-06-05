@@ -173,6 +173,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "FrmAjouterModifierPersonnel";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Ajouter un nouveau personnel";
             panelCouleur.ResumeLayout(false);
             ResumeLayout(false);

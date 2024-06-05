@@ -35,18 +35,18 @@
             txtRechercher = new TextBox();
             btnEffacerRecherche = new Button();
             dgvListePersonnel = new DataGridView();
-            dataGridViewImageColumn1 = new DataGridViewImageColumn();
-            pbxAjouterPersonnel = new PictureBox();
-            dataGridViewImageColumn2 = new DataGridViewImageColumn();
-            pbxModifierPersonnel = new PictureBox();
-            pbxSupprimerPersonnel = new PictureBox();
-            pbxGestionAbsence = new PictureBox();
             colonneIdPersonnel = new DataGridViewTextBoxColumn();
             colonneNom = new DataGridViewTextBoxColumn();
             colonnePrenom = new DataGridViewTextBoxColumn();
             colonneService = new DataGridViewTextBoxColumn();
             colonneTel = new DataGridViewTextBoxColumn();
             colonneEmail = new DataGridViewTextBoxColumn();
+            dataGridViewImageColumn1 = new DataGridViewImageColumn();
+            pbxAjouterPersonnel = new PictureBox();
+            dataGridViewImageColumn2 = new DataGridViewImageColumn();
+            pbxModifierPersonnel = new PictureBox();
+            pbxSupprimerPersonnel = new PictureBox();
+            pbxGestionAbsence = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvListePersonnel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxAjouterPersonnel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxModifierPersonnel).BeginInit();
@@ -62,8 +62,8 @@
             txtRechercher.Location = new Point(13, 13);
             txtRechercher.Margin = new Padding(4);
             txtRechercher.Name = "txtRechercher";
-            txtRechercher.Size = new Size(424, 29);
-            txtRechercher.TabIndex = 0;
+            txtRechercher.Size = new Size(424, 25);
+            txtRechercher.TabIndex = 1;
             txtRechercher.Text = "Rechercher";
             // 
             // btnEffacerRecherche
@@ -74,9 +74,9 @@
             btnEffacerRecherche.Location = new Point(445, 13);
             btnEffacerRecherche.Margin = new Padding(4);
             btnEffacerRecherche.Name = "btnEffacerRecherche";
-            btnEffacerRecherche.Size = new Size(150, 26);
-            btnEffacerRecherche.TabIndex = 1;
-            btnEffacerRecherche.Text = "Effacer la recherche";
+            btnEffacerRecherche.Size = new Size(77, 29);
+            btnEffacerRecherche.TabIndex = 2;
+            btnEffacerRecherche.Text = "Effacer";
             btnEffacerRecherche.UseVisualStyleBackColor = false;
             // 
             // dgvListePersonnel
@@ -106,7 +106,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvListePersonnel.DefaultCellStyle = dataGridViewCellStyle2;
             dgvListePersonnel.GridColor = SystemColors.ControlDarkDark;
-            dgvListePersonnel.Location = new Point(-1, 64);
+            dgvListePersonnel.Location = new Point(-1, 54);
             dgvListePersonnel.Margin = new Padding(4);
             dgvListePersonnel.MultiSelect = false;
             dgvListePersonnel.Name = "dgvListePersonnel";
@@ -123,73 +123,8 @@
             dgvListePersonnel.RowHeadersWidth = 20;
             dgvListePersonnel.ScrollBars = ScrollBars.Vertical;
             dgvListePersonnel.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvListePersonnel.Size = new Size(685, 352);
-            dgvListePersonnel.TabIndex = 2;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            dataGridViewImageColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewImageColumn1.HeaderText = "";
-            dataGridViewImageColumn1.Image = Properties.Resources.logo_mediatek;
-            dataGridViewImageColumn1.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            dataGridViewImageColumn1.MinimumWidth = 6;
-            dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            dataGridViewImageColumn1.ReadOnly = true;
-            dataGridViewImageColumn1.Resizable = DataGridViewTriState.False;
-            dataGridViewImageColumn1.Width = 125;
-            // 
-            // pbxAjouterPersonnel
-            // 
-            pbxAjouterPersonnel.BackgroundImageLayout = ImageLayout.None;
-            pbxAjouterPersonnel.Image = Properties.Resources.icon_ajouter_personnel;
-            pbxAjouterPersonnel.Location = new Point(634, 3);
-            pbxAjouterPersonnel.Name = "pbxAjouterPersonnel";
-            pbxAjouterPersonnel.Size = new Size(26, 24);
-            pbxAjouterPersonnel.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbxAjouterPersonnel.TabIndex = 3;
-            pbxAjouterPersonnel.TabStop = false;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            dataGridViewImageColumn2.HeaderText = "";
-            dataGridViewImageColumn2.Image = (Image)resources.GetObject("dataGridViewImageColumn2.Image");
-            dataGridViewImageColumn2.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            dataGridViewImageColumn2.MinimumWidth = 6;
-            dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            dataGridViewImageColumn2.Width = 125;
-            // 
-            // pbxModifierPersonnel
-            // 
-            pbxModifierPersonnel.BackgroundImageLayout = ImageLayout.None;
-            pbxModifierPersonnel.Image = Properties.Resources.icon_pen_edit;
-            pbxModifierPersonnel.Location = new Point(602, 3);
-            pbxModifierPersonnel.Name = "pbxModifierPersonnel";
-            pbxModifierPersonnel.Size = new Size(26, 24);
-            pbxModifierPersonnel.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxModifierPersonnel.TabIndex = 4;
-            pbxModifierPersonnel.TabStop = false;
-            // 
-            // pbxSupprimerPersonnel
-            // 
-            pbxSupprimerPersonnel.BackgroundImageLayout = ImageLayout.None;
-            pbxSupprimerPersonnel.Image = Properties.Resources.icon_trash_can;
-            pbxSupprimerPersonnel.Location = new Point(634, 33);
-            pbxSupprimerPersonnel.Name = "pbxSupprimerPersonnel";
-            pbxSupprimerPersonnel.Size = new Size(26, 24);
-            pbxSupprimerPersonnel.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxSupprimerPersonnel.TabIndex = 5;
-            pbxSupprimerPersonnel.TabStop = false;
-            // 
-            // pbxGestionAbsence
-            // 
-            pbxGestionAbsence.BackgroundImageLayout = ImageLayout.None;
-            pbxGestionAbsence.Image = Properties.Resources.Custom_Icon_Design_Pretty_Office_7_Calendar_256;
-            pbxGestionAbsence.Location = new Point(602, 33);
-            pbxGestionAbsence.Name = "pbxGestionAbsence";
-            pbxGestionAbsence.Size = new Size(26, 24);
-            pbxGestionAbsence.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxGestionAbsence.TabIndex = 6;
-            pbxGestionAbsence.TabStop = false;
+            dgvListePersonnel.Size = new Size(685, 362);
+            dgvListePersonnel.TabIndex = 0;
             // 
             // colonneIdPersonnel
             // 
@@ -232,9 +167,74 @@
             colonneEmail.MinimumWidth = 6;
             colonneEmail.Name = "colonneEmail";
             // 
+            // dataGridViewImageColumn1
+            // 
+            dataGridViewImageColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewImageColumn1.HeaderText = "";
+            dataGridViewImageColumn1.Image = Properties.Resources.logo_mediatek;
+            dataGridViewImageColumn1.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dataGridViewImageColumn1.MinimumWidth = 6;
+            dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            dataGridViewImageColumn1.ReadOnly = true;
+            dataGridViewImageColumn1.Resizable = DataGridViewTriState.False;
+            // 
+            // pbxAjouterPersonnel
+            // 
+            pbxAjouterPersonnel.BackgroundImageLayout = ImageLayout.None;
+            pbxAjouterPersonnel.Image = Properties.Resources.icon_ajouter_personnel;
+            pbxAjouterPersonnel.Location = new Point(529, 8);
+            pbxAjouterPersonnel.Name = "pbxAjouterPersonnel";
+            pbxAjouterPersonnel.Size = new Size(33, 34);
+            pbxAjouterPersonnel.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxAjouterPersonnel.TabIndex = 3;
+            pbxAjouterPersonnel.TabStop = false;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            dataGridViewImageColumn2.HeaderText = "";
+            dataGridViewImageColumn2.Image = (Image)resources.GetObject("dataGridViewImageColumn2.Image");
+            dataGridViewImageColumn2.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            dataGridViewImageColumn2.MinimumWidth = 6;
+            dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            dataGridViewImageColumn2.Width = 125;
+            // 
+            // pbxModifierPersonnel
+            // 
+            pbxModifierPersonnel.BackgroundImageLayout = ImageLayout.None;
+            pbxModifierPersonnel.Image = Properties.Resources.icon_pen_edit;
+            pbxModifierPersonnel.Location = new Point(568, 8);
+            pbxModifierPersonnel.Name = "pbxModifierPersonnel";
+            pbxModifierPersonnel.Size = new Size(33, 34);
+            pbxModifierPersonnel.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxModifierPersonnel.TabIndex = 4;
+            pbxModifierPersonnel.TabStop = false;
+            // 
+            // pbxSupprimerPersonnel
+            // 
+            pbxSupprimerPersonnel.BackgroundImageLayout = ImageLayout.None;
+            pbxSupprimerPersonnel.Image = Properties.Resources.icon_trash_can;
+            pbxSupprimerPersonnel.Location = new Point(607, 8);
+            pbxSupprimerPersonnel.Name = "pbxSupprimerPersonnel";
+            pbxSupprimerPersonnel.Size = new Size(33, 34);
+            pbxSupprimerPersonnel.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxSupprimerPersonnel.TabIndex = 5;
+            pbxSupprimerPersonnel.TabStop = false;
+            pbxSupprimerPersonnel.Click += pbxSupprimerPersonnel_Click;
+            // 
+            // pbxGestionAbsence
+            // 
+            pbxGestionAbsence.BackgroundImageLayout = ImageLayout.None;
+            pbxGestionAbsence.Image = Properties.Resources.Custom_Icon_Design_Pretty_Office_7_Calendar_256;
+            pbxGestionAbsence.Location = new Point(646, 8);
+            pbxGestionAbsence.Name = "pbxGestionAbsence";
+            pbxGestionAbsence.Size = new Size(33, 35);
+            pbxGestionAbsence.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxGestionAbsence.TabIndex = 6;
+            pbxGestionAbsence.TabStop = false;
+            // 
             // FrmGestionDuPersonnel
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(684, 415);
@@ -251,6 +251,7 @@
             Margin = new Padding(4);
             Name = "FrmGestionDuPersonnel";
             RightToLeft = RightToLeft.No;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion du personnel";
             ((System.ComponentModel.ISupportInitialize)dgvListePersonnel).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxAjouterPersonnel).EndInit();

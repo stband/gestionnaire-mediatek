@@ -120,9 +120,31 @@ namespace GestionnaireMediatek.Views
 
                 FrmAjouterModifierPersonnel frm = new FrmAjouterModifierPersonnel(selectedPersonnel);
                 frm.ShowDialog();
-                
+
                 // Refresh le datagrid
                 LoadPersonnelData();
+            }
+        }
+        private void pbxSupprimerPersonnel_Click(object sender, EventArgs e)
+        {
+            if (dgvListePersonnel.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvListePersonnel.SelectedRows[0];
+                Personnel selectedPersonnel = new Personnel
+                {
+                    IdPersonnel = (int)selectedRow.Cells["colonneIdPersonnel"].Value,
+                    Nom = selectedRow.Cells["colonneNom"].Value.ToString(),
+                    Prenom = selectedRow.Cells["colonnePrenom"].Value.ToString(),
+                    IdService = (int)selectedRow.Cells["colonneService"].Value,
+                    Tel = selectedRow.Cells["colonneTel"].Value.ToString(),
+                    Mail = selectedRow.Cells["colonneEmail"].Value.ToString()
+                };
+
+                FrmConfirmerSuppression frm = new FrmConfirmerSuppression(selectedPersonnel);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadPersonnelData(); // Refresh the data grid view
+                }
             }
         }
     }
