@@ -23,6 +23,43 @@ namespace GestionnaireMediatek.Views
             lblNomPrenom.Text = $"{personnel.Nom} {personnel.Prenom}";
             motifs = PersonnelController.GetMotifs();
             LoadAbsenceData();
+
+            // Initialiser le DataGridView
+            InitializeDataGridView();
+        }
+
+        /// <summary>
+        /// Initialise le DataGridView en ajoutant un gestionnaire d'événements pour la sélection des lignes.
+        /// Définit également les couleurs de sélection des lignes.
+        /// </summary>
+        private void InitializeDataGridView()
+        {
+            dgvListeAbsence.SelectionChanged += new EventHandler(dgvListeAbsence_SelectionChanged);
+            dgvListeAbsence.DefaultCellStyle.SelectionBackColor = Color.LightBlue; // Couleur de fond
+            dgvListeAbsence.DefaultCellStyle.SelectionForeColor = Color.Black; // Couleur du texte
+        }
+
+        /// <summary>
+        /// Gère l'événement de changement de sélection dans le DataGridView.
+        /// Change la couleur de fond et la couleur du texte de la ligne sélectionnée pour la rendre plus visible.
+        /// </summary>
+        /// <param name="sender">Objet source de l'événement</param>
+        /// <param name="e">Arguments de l'événement</param>
+        private void dgvListeAbsence_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvListeAbsence.Rows)
+            {
+                if (row.Selected)
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightBlue; // Couleur de fond de la ligne sélectionnée
+                    row.DefaultCellStyle.ForeColor = Color.Black; // Couleur du texte de la ligne sélectionnée
+                }
+                else
+                {
+                    row.DefaultCellStyle.BackColor = Color.White; // Couleur de fond par défaut
+                    row.DefaultCellStyle.ForeColor = Color.Black; // Couleur du texte par défaut
+                }
+            }
         }
 
         /// <summary>

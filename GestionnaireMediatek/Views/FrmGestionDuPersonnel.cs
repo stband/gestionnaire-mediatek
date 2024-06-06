@@ -31,6 +31,43 @@ namespace GestionnaireMediatek.Views
             this.pbxModifierPersonnel.Click += PbxModifierPersonnel_Click;
 
             SetPlaceholder();
+
+            // Initialiser le DataGridView
+            InitializeDataGridView();
+        }
+
+        /// <summary>
+        /// Initialise le DataGridView en ajoutant un gestionnaire d'événements pour la sélection des lignes.
+        /// Définit également les couleurs de sélection des lignes.
+        /// </summary>
+        private void InitializeDataGridView()
+        {
+            dgvListePersonnel.SelectionChanged += new EventHandler(dgvListePersonnel_SelectionChanged);
+            dgvListePersonnel.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
+            dgvListePersonnel.DefaultCellStyle.SelectionForeColor = Color.Black;
+        }
+
+        /// <summary>
+        /// Gère l'événement de changement de sélection dans le DataGridView.
+        /// Change la couleur de fond et la couleur du texte de la ligne sélectionnée pour la rendre plus visible.
+        /// </summary>
+        /// <param name="sender">Objet source de l'événement</param>
+        /// <param name="e">Arguments de l'événement</param>
+        private void dgvListePersonnel_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvListePersonnel.Rows)
+            {
+                if (row.Selected)
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightBlue; // Couleur de fond de la ligne sélectionnée
+                    row.DefaultCellStyle.ForeColor = Color.Black; // Couleur du texte de la ligne sélectionnée
+                }
+                else
+                {
+                    row.DefaultCellStyle.BackColor = Color.White; // Couleur de fond par défaut
+                    row.DefaultCellStyle.ForeColor = Color.Black; // Couleur du texte par défaut
+                }
+            }
         }
 
         /// <summary>
