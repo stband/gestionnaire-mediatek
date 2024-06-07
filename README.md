@@ -64,7 +64,7 @@ Ce projet consiste à développer une application de bureau pour la gestion du p
 
 La documentation technique de l'application est disponible dans le répertoire `Docs`. Vous pouvez la consulter pour obtenir des détails sur les classes, les méthodes et les fonctionnalités de l'application.
 
-- [Documentation Technique HTML](Docs/html/annotated.html)
+- [Documentation Technique HTML](https://stband.github.io/GestionnaireMediatek/Docs/html/annotated.html)
 
 ## Auteur
 
