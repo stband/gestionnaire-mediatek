@@ -30,7 +30,7 @@ Ce projet consiste à développer une application de bureau pour la gestion du p
 
 1. Clonez le dépôt GitHub :
     ```sh
-    git clone https://github.com/votre-utilisateur/votre-repo.git
+    git clone https://github.com/stband/GestionnaireMediatek.git
     ```
 2. Ouvrez la solution dans Visual Studio 2022.
 3. Exécutez le script SQL pour créer la base de données et les tables nécessaires.
@@ -39,7 +39,7 @@ Ce projet consiste à développer une application de bureau pour la gestion du p
 ### Utilisation de l'Installeur
 
 1. Téléchargez l'installeur depuis le dépôt GitHub :
-    - [Télécharger l'Installeur](installer/setupmediatek.exe)
+    - [Télécharger l'Installeur](Installer/setupmediatek.exe)
 2. Exécutez le fichier `setupmediatek.exe` pour lancer l'assistant d'installation.
 3. Suivez les étapes de l'assistant pour installer l'application sur votre poste.
     - Sélectionnez le répertoire d'installation.
@@ -59,6 +59,12 @@ Ce projet consiste à développer une application de bureau pour la gestion du p
 1. Lancez l'application via le raccourci sur le bureau ou depuis le menu Démarrer.
 2. Connectez-vous avec les identifiants fournis.
 3. Utilisez les différentes fonctionnalités de l'application pour gérer le personnel, les absences, et les services.
+
+## Documentation Technique
+
+La documentation technique de l'application est disponible dans le répertoire `Docs`. Vous pouvez la consulter pour obtenir des détails sur les classes, les méthodes et les fonctionnalités de l'application.
+
+- [Documentation Technique HTML](Docs/hmtl/annotated.html)
 
 ## Auteur
 
