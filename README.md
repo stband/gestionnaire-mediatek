@@ -30,7 +30,7 @@ Ce projet consiste à développer une application de bureau pour la gestion du p
 
 1. Clonez le dépôt GitHub :
     ```sh
-    git clone https://github.com/stband/GestionnaireMediatek.git
+    git clone https://github.com/stband/gestionnaire-mediatek.git
     ```
 2. Ouvrez la solution dans Visual Studio 2022.
 3. Exécutez le script SQL pour créer la base de données et les tables nécessaires.
